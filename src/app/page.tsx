@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <main className="h-screen bg-[] ">
-        <form action="#" className="space-y-5 text-center ">
+        <form action="#" className="space-y-10 text-center ">
           <h1 className="text-4xl font-bold mt-9 ">
             Access Working Capital In 48 Hours
           </h1>
