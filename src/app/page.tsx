@@ -3,16 +3,27 @@ import Navbar from "./components/Navbar";
 import Slider from "./components/slider";
 import Slider2 from "./components/slider2";
 
+
 export default function Home() {
   return (
     <div>
       <main className="h-screen bg-[] ">
         <form action="#" className="space-y-10 text-center ">
           <h1 className="text-4xl font-bold mt-9 ">
-            Access Working Capital In 48 Hours
+            Working Capital As fast as <span className="font-bold underline">Lightning</span> 
           </h1>
           <div>
-            <label>Access Working Capital In 48 Hours</label>
+            <label>What is you monthly Turn Over?</label>
+            <input
+              type="text"
+              name="turnOver"
+              placeholder="100,000"
+              id="turnOver"
+              className="w-full border-2 border-black px-7 py-4 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+            />
+          </div>
+          <div>
+            <label>What is you monthly Gross Profit?</label>
             <input
               type="text"
               name="grossProfit"
@@ -20,6 +31,13 @@ export default function Home() {
               className="w-full border-2 border-black px-7 py-4 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             />
           </div>
+          <div className="text-sm leading-6">
+            <label htmlFor="comments" className="font-medium text-gray-900">
+              Comments
+            </label>
+            <p className="text-gray-500">Get notified when someones posts a comment on a posting.</p>
+          </div>
+
           <div className=" flex justify-between items-center gap-10">
             <Slider />
             <p className=" font-black text-xl text-start">
@@ -29,7 +47,7 @@ export default function Home() {
           <div className=" flex justify-between items-center gap-10">
             <Slider2 />
             <p className=" font-black text-xl text-start">
-              How much money do you need?
+              How long do you want to pay it for?
             </p>
           </div>
           <div>
