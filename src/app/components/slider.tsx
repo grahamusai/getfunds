@@ -8,9 +8,9 @@ const Slider = () => {
   return (
     <div>
       <CircularSlider
-        width={130}
+        width={120}
         // @ts-ignore
-        height={130}
+        height={120}
         min={0}
         max={100000}
         label=""
