@@ -1,14 +1,15 @@
 'use client'
-
 import { useState } from 'react';
 
 const LoanCalculator = () => {
-  const [grossProfit, setGrossProfit] = useState(0);
+  const [grossProfit, setGrossProfit] = useState(0); 
   const [loanAmount, setLoanAmount] = useState(0);
 
   const calculateLoan = () => {
-    const loan = grossProfit * 0.7;
-    setLoanAmount(loan);
+    const maxAmount = grossProfit * 0.7;
+    const cost = grossProfit * 0.21;
+    const total = maxAmount + cost;
+    setLoanAmount(maxAmount);
   };
 
   return (
