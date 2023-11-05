@@ -12,6 +12,7 @@ const LoanCalculator = () => {
     setLoanAmount(maxAmount);
   };
 
+//Max amount is the max in the first slider
   return (
     <div>
       <h2>Loan Calculator</h2>
