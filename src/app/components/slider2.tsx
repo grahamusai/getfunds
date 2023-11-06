@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
 import CircularSlider from "@fseehawer/react-circular-slider";
-import { GoDotFill } from "react-icons/go";
+
+import { useGlobalState } from "../libs/global_state";
 
 const Slider2 = () => {
-  const [value, setValue] = useState(0);
+  const { duration, setDuration } = useGlobalState();
   return (
     <div>
       <CircularSlider
@@ -15,7 +15,7 @@ const Slider2 = () => {
         max={12}
         label="months"
         labelBottom={true}
-        dataIndex={value}
+        dataIndex={duration}
         knobColor="black"
         progressColorFrom="#000"
         progressColorTo="#000"
@@ -26,7 +26,7 @@ const Slider2 = () => {
         valueFontSize="20px"
         labelColor="#000"
         verticalOffset="0px"
-        onChange={(value: number) => setValue(value)}
+        onChange={(duration: number) => setDuration(duration)}
       />
     </div>
   );

@@ -2,19 +2,20 @@
 import { useState } from "react";
 import CircularSlider from "@fseehawer/react-circular-slider";
 import { GoDotFill } from "react-icons/go";
+import { useGlobalState } from "../libs/global_state";
 
 const Slider = () => {
-  const [value, setValue] = useState(0);
+  const { neededAmount, setNeededAmount, turnOver } = useGlobalState();
   return (
     <div>
       <CircularSlider
         width={120}
         // @ts-ignore
         height={120}
-        min={0}
-        max={100000}
+        min={3}
+        max={turnOver}
         label=""
-        dataIndex={value}
+        dataIndex={neededAmount}
         knobColor="black"
         progressColorFrom="#000"
         progressColorTo="#000"
@@ -26,7 +27,7 @@ const Slider = () => {
         prependToValue="R"
         labelColor="#000"
         verticalOffset="0px"
-        onChange={(value: number) => setValue(value)}
+        onChange={(neededAmount: number) => setNeededAmount(neededAmount)}
       />
     </div>
   );

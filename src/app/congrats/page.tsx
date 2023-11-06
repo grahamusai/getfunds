@@ -1,10 +1,14 @@
+"use client";
 import Link from "next/link";
 import Slider from "../components/slider";
 import Slider2 from "../components/slider2";
+import { useGlobalState } from "../libs/global_state";
 
 const Congrats = () => {
+  const { grossProfit, turnOver, neededAmount, duration } = useGlobalState();
+
   return (
-    <form action="#" className="space-y-5 text-center ">
+    <div className="space-y-5 text-center ">
       <h1 className="text-4xl font-bold mt-9 ">Congratulation</h1>
       <p className="text-2xl">You Qualify for a Merchant Cash Advance</p>
       <div className=" flex justify-between items-center gap-10">
@@ -48,12 +52,16 @@ const Congrats = () => {
           </div>
         </div>
       </div>
-      <Link href="/congrats">
-        <div className=" w-full mt-5 bg-black p-5 text-white rounded-full">
-          Apply Now
-        </div>
-      </Link>
-    </form>
+
+      <button
+        onClick={() => {
+          console.log(grossProfit, turnOver, neededAmount, duration);
+        }}
+        className=" w-full mt-5 bg-black p-5 text-white rounded-full"
+      >
+        Apply Now
+      </button>
+    </div>
   );
 };
 

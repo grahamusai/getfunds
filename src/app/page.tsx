@@ -1,17 +1,15 @@
-import Image from "next/image";
+"use client";
 import Navbar from "./components/Navbar";
-import Slider from "./components/slider";
-import Slider2 from "./components/slider2";
+
 import Link from "next/link";
+import { useGlobalState } from "./libs/global_state";
 
 export default function Home() {
+  const { setTurnOver, setGrossProfit } = useGlobalState();
   return (
     <main className=" pt-9">
       <Navbar />
-      <form
-        action="#"
-        className=" mx-auto flex flex-col justify-between min-h-[87vh] pt-10"
-      >
+      <div className=" mx-auto flex flex-col justify-between min-h-[87vh] pt-10">
         <h1 className="text-4xl font-bold text-center">
           Access Working Capital In 48 Hours
         </h1>
@@ -22,6 +20,9 @@ export default function Home() {
               type="number"
               name="turnover"
               placeholder="100000"
+              onChange={(e) => {
+                setTurnOver(parseInt(e.target.value));
+              }}
               className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             />
           </div>
@@ -33,6 +34,9 @@ export default function Home() {
               type="number"
               name="grossProfit"
               placeholder="20%"
+              onChange={(e) => {
+                setGrossProfit(parseInt(e.target.value));
+              }}
               className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             />
           </div>
@@ -51,11 +55,11 @@ export default function Home() {
         </div>
 
         <Link href="/congrats">
-          <div className=" w-full bg-black p-5 text-white rounded-full flex items-center justify-center">
+          <button className=" w-full bg-black p-5 text-white rounded-full flex items-center justify-center">
             Apply Now
-          </div>
+          </button>
         </Link>
-      </form>
+      </div>
     </main>
   );
 }
