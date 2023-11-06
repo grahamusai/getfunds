@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useGlobalState } from "./libs/global_state";
 
 export default function Home() {
-  const { setTurnOver, setGrossProfit } = useGlobalState();
+  const { setTurnOver, setGrossProfit, turnOver, grossProfit } =
+    useGlobalState();
   return (
     <main className=" pt-9">
       <Navbar />
@@ -53,6 +54,15 @@ export default function Home() {
             </label>
           </div>
         </div>
+
+        {/* <button
+          onClick={() => {
+            console.log(turnOver, grossProfit);
+          }}
+          className=" w-full bg-black p-5 text-white rounded-full flex items-center justify-center"
+        >
+          Apply Now
+        </button> */}
 
         <Link href="/congrats">
           <button className=" w-full bg-black p-5 text-white rounded-full flex items-center justify-center">

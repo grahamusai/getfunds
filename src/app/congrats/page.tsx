@@ -7,18 +7,26 @@ import { useGlobalState } from "../libs/global_state";
 const Congrats = () => {
   const { grossProfit, turnOver, neededAmount, duration } = useGlobalState();
 
+  const totalPayOver = (neededAmount: number, duration: number) => {
+    return neededAmount * duration;
+  };
+
+  const repaymentAmount = (grossProfit: number, duration: number) => {
+    return grossProfit * duration;
+  };
+
   return (
     <div className="space-y-5 text-center ">
       <h1 className="text-4xl font-bold mt-9 ">Congratulation</h1>
       <p className="text-2xl">You Qualify for a Merchant Cash Advance</p>
       <div className=" flex justify-between items-center gap-10">
-        <Slider />
+        <Slider max={turnOver} />
         <p className=" font-black text-xl text-start">
           How much money do you need?
         </p>
       </div>
       <div className=" flex justify-between items-center gap-10">
-        <Slider2 />
+        <Slider2 min={3} />
         <p className=" font-black text-xl text-start">
           How long do you want to pay it for?
         </p>
@@ -45,10 +53,14 @@ const Congrats = () => {
         </div>
         <div className=" flex items-center">
           <div className="w-1/2 h-16 flex items-center justify-center">
-            <h3 className=" underline">R200,000</h3>
+            <h3 className=" underline">
+              R{totalPayOver(neededAmount, duration)}
+            </h3>
           </div>
           <div className="w-1/2 h-16 flex items-center justify-center">
-            <h3 className=" underline">R10,000</h3>
+            <h3 className=" underline">
+              R{repaymentAmount(grossProfit, duration)}
+            </h3>
           </div>
         </div>
       </div>

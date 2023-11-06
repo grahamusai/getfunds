@@ -1,9 +1,10 @@
 "use client";
+import { useState } from "react";
 import CircularSlider from "@fseehawer/react-circular-slider";
-
+import { GoDotFill } from "react-icons/go";
 import { useGlobalState } from "../libs/global_state";
 
-const Slider2 = () => {
+const Slider2 = (props: { min: number }) => {
   const { duration, setDuration } = useGlobalState();
   return (
     <div>
@@ -11,7 +12,7 @@ const Slider2 = () => {
         width={120}
         // @ts-ignore
         height={120}
-        min={0}
+        min={props.min}
         max={12}
         label="months"
         labelBottom={true}
