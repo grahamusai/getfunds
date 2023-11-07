@@ -14,13 +14,13 @@ const Congrats = () => {
   const repaymentAmount = (grossProfit: number, duration: number) => {
     return grossProfit * duration;
   };
-
+  const maxAmount = turnOver * 0.7;
   return (
     <div className="space-y-5 text-center ">
       <h1 className="text-4xl font-bold mt-9 ">Congratulation</h1>
-      <p className="text-2xl">You Qualify for a Merchant Cash Advance</p>
+      <p className="text-2xl">You Qualify for up to <span>{maxAmount} in finding</span></p>
       <div className=" flex justify-between items-center gap-10">
-        <Slider max={turnOver} />
+        <Slider max={maxAmount} />
         <p className=" font-black text-xl text-start">
           How much money do you need?
         </p>
