@@ -11,6 +11,8 @@ interface GlobalState {
   setNeededAmount: (value: number) => void;
   duration: number;
   setDuration: (value: number) => void;
+  frequency: string;
+  setFrequency: (value: string) => void;
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -22,4 +24,6 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setNeededAmount: (value: number) => set({ neededAmount: value }),
   duration: 0,
   setDuration: (value: number) => set({ duration: value }),
+  frequency: "weekly",
+  setFrequency: (value: string) => set({ frequency: value }),
 }));
