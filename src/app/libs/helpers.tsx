@@ -1,1 +1,2 @@
-export const twoDecimals = (amount: number) => amount.toFixed(2);
+//round to nearest whole number
+export const round = (amount: number) => Math.round(amount);

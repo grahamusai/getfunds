@@ -4,7 +4,7 @@ import Slider from "../components/slider";
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
 import { useState } from "react";
-import { twoDecimals } from "../libs/helpers";
+import { round } from "../libs/helpers";
 import Switcher from "../components/switcher";
 
 const Congrats = () => {
@@ -77,12 +77,12 @@ const Congrats = () => {
         <div className=" flex items-center">
           <div className="w-1/2 h-16 flex items-center justify-center">
             <h3 className=" underline">
-              R{`${twoDecimals(calculateTotalPay() || 0)}`}
+              R{`${round(calculateTotalPay() || 0)}`}
             </h3>
           </div>
           <div className="w-1/2 h-16 flex items-center justify-center">
             <h3 className=" underline">
-              R{twoDecimals(calculateRepayAmount() || 0)}
+              R{round(calculateRepayAmount() || 0)}
             </h3>
           </div>
         </div>
