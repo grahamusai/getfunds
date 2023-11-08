@@ -4,10 +4,11 @@ import Slider from "../components/slider";
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
 
-const Congrats = () => {
+const Congrats = () => { 
+  
   const { grossProfit, turnOver, neededAmount, duration } = useGlobalState();
 
-  const totalPayOver = (neededAmount: number, duration: number) => {
+  const totalPayOver = (neededAmount: number, duration: number,) => {
     return neededAmount * duration;
   };
 
@@ -15,6 +16,14 @@ const Congrats = () => {
     return grossProfit * duration;
   };
   const maxAmount = turnOver * 0.7;
+  const interest = maxAmount * 0.75
+
+  const totalCost = (maxAmount: number, interest: number) =>{
+    if(duration === 3){
+      return neededAmount + interest;
+    }
+  }
+  
   return (
     <div className="space-y-5 text-center ">
       <h1 className="text-4xl font-bold mt-9 ">Congratulation</h1>
@@ -54,7 +63,7 @@ const Congrats = () => {
         <div className=" flex items-center">
           <div className="w-1/2 h-16 flex items-center justify-center">
             <h3 className=" underline">
-              R{totalPayOver(neededAmount, duration)}
+              R{totalCost(maxAmount, interest)} 
             </h3>
           </div>
           <div className="w-1/2 h-16 flex items-center justify-center">

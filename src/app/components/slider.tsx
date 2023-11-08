@@ -12,7 +12,7 @@ const Slider = (props: { max: number }) => {
         width={120}
         // @ts-ignore
         height={120}
-        min={0}
+        min={30000}
         max={props.max}
         label=""
         dataIndex={neededAmount}
