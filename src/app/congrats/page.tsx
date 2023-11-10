@@ -18,12 +18,12 @@ const Congrats = () => {
 
   const calculateTotalPay = () => {
     const interestRates = [
-      0, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3,
+      0, 0, 0, 7.5, 10.0, 12.5, 15.0, 17.5, 20, 22.5, 25.0, 27.5, 3.0,
     ];
 
     if (duration >= 3 && duration <= 12) {
       const interestRate = interestRates[duration];
-      return neededAmount + neededAmount * interestRate;
+      return neededAmount + (neededAmount * interestRate / 100);
     }
   };
 
@@ -40,7 +40,7 @@ const Congrats = () => {
     if (frequency === "weekly") {
       return totalPayOver / totalWeeks[duration];
     }
-
+    
     return neededAmount;
   };
 
