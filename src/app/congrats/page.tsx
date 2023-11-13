@@ -4,7 +4,7 @@ import Slider from "../components/slider";
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
 import { useState } from "react";
-import { round } from "../libs/helpers";
+import { round } from "../libs/helpers"; 
 import Switcher from "../components/switcher";
 
 const Congrats = () => {
@@ -28,17 +28,17 @@ const Congrats = () => {
   };
 
   const calculateRepayAmount = () => {
-    const totalDays = [75, 100, 125, 150, 175, 200, 225, 250, 275, 300];
-    const totalWeeks = [12, 16, 20, 24, 28, 32, 36, 40, 44, 48];
+    const totalDays = [0, 0, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300];
+    const totalWeeks = [0, 0, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48];
 
     const totalPayOver = calculateTotalPay() || 0;
 
     if (frequency === "daily") {
-      return totalPayOver / totalDays[duration];
+      return totalPayOver / totalDays[duration -1];
     }
 
     if (frequency === "weekly") {
-      return totalPayOver / totalWeeks[duration];
+      return totalPayOver / totalWeeks[duration -1];
     }
     
     return neededAmount;
