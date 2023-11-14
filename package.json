@@ -12,13 +12,14 @@
     "@fseehawer/react-circular-slider": "^2.6.1",
     "next": "14.0.0",
     "react": "^18",
+    "react-circle-slider": "1.6.2",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "zustand": "^4.4.6"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "^18.2.37",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
     "eslint": "^8",

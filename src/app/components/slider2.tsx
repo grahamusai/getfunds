@@ -26,8 +26,9 @@ const Slider2 = (props: { min: number }) => {
         trackSize={3}
         valueFontSize="20px"
         labelColor="#000"
-        verticalOffset="0px"
+        verticalOffset="20px"
         onChange={(duration: number) => setDuration(duration)}
+        
       />
     </div>
   );

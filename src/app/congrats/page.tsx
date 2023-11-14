@@ -45,21 +45,21 @@ const Congrats = () => {
   };
 
   return (
-    <div className="space-y-5 text-center ">
-      <h1 className="text-4xl font-bold mt-9 ">Congratulation</h1>
+    <div className="space-y-5 text-center max-w-md mx-auto mt-10 p-6 bg-opacity-10 rounded-md shadow-md">
+      <h1 className="text-4xl font-bold mt-9 ">Congradulations</h1>
       <p className="text-2xl">
-        You Qualify for up to <span>{maxAmount} in finding</span>
+        You Qualify for up to <span>R{maxAmount} in funding</span>
       </p>
       <div className=" flex justify-between items-center gap-10">
         <Slider max={maxAmount} />
         <p className=" font-black text-xl text-start">
-          How much money do you need?
+          How much funding do you need?
         </p>
       </div>
       <div className=" flex justify-between items-center gap-10">
         <Slider2 min={0} />
         <p className=" font-black text-xl text-start">
-          How long do you want to pay it for?
+          Over what term?
         </p>
       </div>
       <Switcher />
@@ -88,14 +88,11 @@ const Congrats = () => {
         </div>
       </div>
 
-      <button
-        onClick={() => {
-          console.log(grossProfit, turnOver, neededAmount, duration);
-        }}
-        className=" w-full mt-5 bg-black p-5 text-white rounded-full"
-      >
-        Apply Now
-      </button>
+      <Link href="/application">
+          <button className=" w-full bg-black mt-3 p-5 text-white rounded-full flex items-center justify-center">
+            Apply Now
+          </button>
+        </Link>
     </div>
   );
 };

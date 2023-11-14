@@ -27,7 +27,7 @@ const Switcher = () => {
         } rounded-r-full`}
       >
         <p className=" text-sm">Weekly</p>
-        <p className=" text-xs">4 times PM</p>
+        <p className=" text-xs">4 times monthly</p>
       </button>
     </div>
   );
