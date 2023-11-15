@@ -18,10 +18,10 @@ const Congrats = () => {
 
   const calculateTotalPay = () => {
     const interestRates = [
-      0, 0, 0, 7.5, 10.0, 12.5, 15.0, 17.5, 20, 22.5, 25.0, 27.5, 3.0,
+      0, 0, 0, 12, 16, 18, 21, 23, 25, 28, 30, 27.5, 3.0,
     ];
 
-    if (duration >= 3 && duration <= 12) {
+    if (duration >= 3 && duration <= 10) {
       const interestRate = interestRates[duration];
       return neededAmount + (neededAmount * interestRate / 100);
     }
@@ -45,23 +45,25 @@ const Congrats = () => {
   };
 
   return (
-    <div className="space-y-5 text-center max-w-md mx-auto mt-10 p-6 bg-opacity-10 rounded-md shadow-md">
+    <div className="space-y-5 text-center max-w-md mx-auto mt-10 p-8 bg-opacity-10 rounded-md shadow-md">
       <h1 className="text-4xl font-bold mt-9 ">Congradulations</h1>
       <p className="text-2xl">
         You Qualify for up to <span>R{maxAmount} in funding</span>
       </p>
+      
       <div className=" flex justify-between items-center gap-10">
-        <Slider max={maxAmount} />
+        <Slider max={maxAmount}  />
         <p className=" font-black text-xl text-start">
           How much funding do you need?
         </p>
       </div>
       <div className=" flex justify-between items-center gap-10">
         <Slider2 min={0} />
-        <p className=" font-black text-xl text-start">
+        <p className=" font-black text-xl text-left">
           Over what term?
         </p>
       </div>
+      <span className="text-center mt-5">Choose</span>
       <Switcher />
       <div className=" w-full border-[3px] border-black rounded-2xl overflow-hidden">
         <div className="flex items-center bg-black text-white">
@@ -70,7 +72,7 @@ const Congrats = () => {
           </div>
           <div className="w-1/2 h-full py-2">
             <h3 className=" text sm">
-              Repayment <br /> Amounts
+              Repayments <br /> Amount
             </h3>
           </div>
         </div>
@@ -93,6 +95,8 @@ const Congrats = () => {
             Apply Now
           </button>
         </Link>
+      <span className="italic text-sm mb-4 p-5">All qoutes are subject to due deligence</span>
+        
     </div>
   );
 };

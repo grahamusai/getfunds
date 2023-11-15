@@ -28,8 +28,8 @@ const Slider2 = (props: { min: number }) => {
         labelColor="#000"
         verticalOffset="20px"
         onChange={(duration: number) => setDuration(duration)}
-        
       />
+      
     </div>
   );
 };
