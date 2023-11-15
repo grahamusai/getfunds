@@ -5,7 +5,7 @@ const Details = () => {
     return (
       <div className="max-w-md mx-auto mt-10 p-6 bg-gray-100 rounded-md shadow-md">
         <h2 className="text-2xl font-semibold mb-4">Business Details</h2>
-        <form action="{https://formsubmit.co/your@email.com}">
+        <form action="https://formsubmit.co/your@email.com" method="POST">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
               Business Name
