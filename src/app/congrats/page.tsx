@@ -45,7 +45,7 @@ const Congrats = () => {
   };
 
   return (
-    <div className="space-y-5 text-center max-w-md mx-auto mt-3 p-8 bg-black bg-opacity-10">
+    <div className="space-y-5 text-center max-w-md mx-auto mt-3 p-8 bg-opacity-10">
       <h1 className="text-4xl font-bold mt-5 ">Congradulations</h1>
       <p className="text-2xl">
         You Qualify for up to <span>R{maxAmount} in funding</span>

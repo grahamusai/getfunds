@@ -9,7 +9,7 @@ const Slider = (props: { max: number }) => {
   const { neededAmount, setNeededAmount } = useGlobalState();
   return (
     <div>
-      <span className="italic text-xs mb-2">Slide <GoArrowRight /></span>
+      <span className="italic text-xs mb-2">Slide</span>
       <CircularSlider
         width={120}
         // @ts-ignore
