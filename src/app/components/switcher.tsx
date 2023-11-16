@@ -5,7 +5,8 @@ const Switcher = () => {
   const { setFrequency } = useGlobalState();
 
   return (
-    <div>
+    <div className="flex flex-row">
+      <span className="text-center mt-5">&nbsp;</span>
       <button
         onClick={() => {
           setToggle(!toggle);

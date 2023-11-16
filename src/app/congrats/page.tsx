@@ -45,8 +45,8 @@ const Congrats = () => {
   };
 
   return (
-    <div className="space-y-5 text-center max-w-md mx-auto mt-10 p-8 bg-opacity-10 rounded-md shadow-md">
-      <h1 className="text-4xl font-bold mt-9 ">Congradulations</h1>
+    <div className="space-y-5 text-center max-w-md mx-auto mt-3 p-8 bg-black bg-opacity-10">
+      <h1 className="text-4xl font-bold mt-5 ">Congradulations</h1>
       <p className="text-2xl">
         You Qualify for up to <span>R{maxAmount} in funding</span>
       </p>
@@ -57,7 +57,7 @@ const Congrats = () => {
           How much funding do you need?
         </p>
       </div>
-      <div className=" flex justify-between items-center gap-10">
+      <div className=" flex flex-row items-center gap-10">
         <Slider2 min={0} />
         <p className=" font-black text-xl text-left">
           Over what term?
@@ -77,12 +77,12 @@ const Congrats = () => {
           </div>
         </div>
         <div className=" flex items-center">
-          <div className="w-1/2 h-16 flex items-center justify-center">
+          <div className="w-1/2 h-12 flex items-center justify-center">
             <h3 className=" underline">
               R{`${round(calculateTotalPay() || 0)}`}
             </h3>
           </div>
-          <div className="w-1/2 h-16 flex items-center justify-center">
+          <div className="w-1/2 h-12 flex items-center justify-center">
             <h3 className=" underline">
               R{round(calculateRepayAmount() || 0)}
             </h3>

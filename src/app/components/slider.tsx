@@ -3,12 +3,13 @@ import { useState } from "react";
 import CircularSlider from "@fseehawer/react-circular-slider";
 import { GoDotFill } from "react-icons/go";
 import { useGlobalState } from "../libs/global_state";
+import { GoArrowRight } from "react-icons/go";
 
 const Slider = (props: { max: number }) => {
   const { neededAmount, setNeededAmount } = useGlobalState();
   return (
     <div>
-      <span className="italic text-xs mb-5">Slide</span>
+      <span className="italic text-xs mb-2">Slide <GoArrowRight /></span>
       <CircularSlider
         width={120}
         // @ts-ignore
@@ -17,8 +18,8 @@ const Slider = (props: { max: number }) => {
         max={props.max}
         label=""
         knobColor="black"
-        progressColorFrom="#000"
-        progressColorTo="#000"
+        progressColorFrom="white"
+        progressColorTo="black"
         progressSize={5}
         trackColor="white"
         trackDraggable={true}
@@ -29,7 +30,6 @@ const Slider = (props: { max: number }) => {
         verticalOffset="0px"
         onChange={(value: number) => setNeededAmount(value)}
       />
-      <span className="italic text-xs mt-3">Slide</span>
     </div>
   );
 };
