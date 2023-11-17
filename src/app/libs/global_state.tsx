@@ -13,6 +13,8 @@ interface GlobalState {
   setDuration: (value: number) => void;
   frequency: string;
   setFrequency: (value: string) => void;
+  useSlider: boolean;
+  setUseSlider: (value: boolean) => void;
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -26,4 +28,6 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setDuration: (value: number) => set({ duration: value }),
   frequency: "weekly",
   setFrequency: (value: string) => set({ frequency: value }),
+  useSlider: true,
+  setUseSlider: (value: boolean) => set({ useSlider: value }),
 }));

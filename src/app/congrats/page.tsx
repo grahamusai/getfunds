@@ -3,13 +3,22 @@ import Link from "next/link";
 import Slider from "../components/slider";
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
-import { useState } from "react";
-import { round } from "../libs/helpers"; 
+
+import { round } from "../libs/helpers";
 import Switcher from "../components/switcher";
+import InputSwitcher from "../components/input_switcher";
+import FundingInput from "../components/funding_input";
 
 const Congrats = () => {
-  const { grossProfit, turnOver, neededAmount, duration, frequency } =
-    useGlobalState();
+  const {
+    grossProfit,
+    turnOver,
+    neededAmount,
+    duration,
+    frequency,
+    useSlider,
+  } = useGlobalState();
+
   const repaymentAmount = (grossProfit: number, duration: number) => {
     return grossProfit * duration;
   };
@@ -17,13 +26,11 @@ const Congrats = () => {
   const interest = 0.075;
 
   const calculateTotalPay = () => {
-    const interestRates = [
-      0, 0, 0, 12, 16, 18, 21, 23, 25, 28, 30, 27.5, 3.0,
-    ];
+    const interestRates = [0, 0, 0, 12, 16, 18, 21, 23, 25, 28, 30, 27.5, 3.0];
 
     if (duration >= 3 && duration <= 10) {
       const interestRate = interestRates[duration];
-      return neededAmount + (neededAmount * interestRate / 100);
+      return neededAmount + (neededAmount * interestRate) / 100;
     }
   };
 
@@ -34,34 +41,37 @@ const Congrats = () => {
     const totalPayOver = calculateTotalPay() || 0;
 
     if (frequency === "daily") {
-      return totalPayOver / totalDays[duration -1];
+      return totalPayOver / totalDays[duration - 1];
     }
 
     if (frequency === "weekly") {
-      return totalPayOver / totalWeeks[duration -1];
+      return totalPayOver / totalWeeks[duration - 1];
     }
-    
+
     return neededAmount;
   };
 
   return (
     <div className="space-y-5 text-center max-w-md mx-auto mt-3 p-8 bg-opacity-10">
-      <h1 className="text-4xl font-bold mt-5 ">Congradulations</h1>
+      <h1 className="text-4xl font-bold mt-5 ">Congratulations</h1>
       <p className="text-2xl">
         You Qualify for up to <span>R{maxAmount} in funding</span>
       </p>
-      
+
       <div className=" flex justify-between items-center gap-10">
-        <Slider max={maxAmount}  />
+        <div>
+          <div className=" w-32 h-32">
+            {useSlider ? <Slider max={maxAmount} /> : <FundingInput />}
+          </div>
+          <InputSwitcher />
+        </div>
         <p className=" font-black text-xl text-start">
           How much funding do you need?
         </p>
       </div>
       <div className=" flex flex-row items-center gap-10">
-        <Slider2 min={0} />
-        <p className=" font-black text-xl text-left">
-          Over what term?
-        </p>
+        <Slider2 min={3} />
+        <p className=" font-black text-xl text-left">Over what term?</p>
       </div>
       <span className="text-center mt-5">Choose</span>
       <Switcher />
@@ -91,12 +101,13 @@ const Congrats = () => {
       </div>
 
       <Link href="/application">
-          <button className=" w-full bg-black mt-3 p-5 text-white rounded-full flex items-center justify-center">
-            Apply Now
-          </button>
-        </Link>
-      <span className="italic text-sm mb-4 p-5">All qoutes are subject to due deligence</span>
-        
+        <button className=" w-full bg-black mt-3 p-5 text-white rounded-full flex items-center justify-center">
+          Apply Now
+        </button>
+      </Link>
+      <span className="italic text-sm mb-4 p-5">
+        All quotes are subject to due diligence
+      </span>
     </div>
   );
 };
