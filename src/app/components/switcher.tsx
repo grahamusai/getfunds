@@ -12,7 +12,7 @@ const Switcher = () => {
           setToggle(!toggle);
           setFrequency("daily");
         }}
-        className={` font-bold py-2 w-40 ${
+        className={` font-bold py-1 w-40 ${
           toggle ? "bg-black text-white" : "bg-white text-black"
         } rounded-l-full`}
       >
@@ -23,7 +23,7 @@ const Switcher = () => {
           setToggle(!toggle);
           setFrequency("weekly");
         }}
-        className={` font-bold py-2 w-40 ${
+        className={` font-bold py-1 w-40 ${
           toggle ? "bg-white text-black" : "bg-black text-white"
         } rounded-r-full`}
       >

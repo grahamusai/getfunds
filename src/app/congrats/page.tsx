@@ -63,7 +63,9 @@ const Congrats = () => {
           <div className=" w-32 h-32">
             {useSlider ? <Slider max={maxAmount} /> : <FundingInput />}
           </div>
-          <InputSwitcher />
+          <div className="m-3">
+            <InputSwitcher />
+          </div>
         </div>
         <p className=" font-black text-xl text-start">
           How much funding do you need?
