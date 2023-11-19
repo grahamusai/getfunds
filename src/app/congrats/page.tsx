@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Slider from "../components/slider";
+import Slider from "../components/slider"; 
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
 
