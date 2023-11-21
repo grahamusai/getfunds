@@ -7,6 +7,7 @@ import { round } from "../libs/helpers";
 import Switcher from "../components/switcher";
 import InputSwitcher from "../components/input_switcher";
 import FundingInput from "../components/funding_input";
+import Image from "next/image";
 
 const Congrats = () => {
   const {

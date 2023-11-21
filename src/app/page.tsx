@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 
 import Link from "next/link";
 import { useGlobalState } from "./libs/global_state";
+import Image from "next/image";
 
 export default function Home() {
   const { setTurnOver, setGrossProfit, turnOver, grossProfit } =
@@ -11,6 +12,14 @@ export default function Home() {
     <main>
       <div className="w-screen h-screen flex items-center justify-center">
         <div>
+          <div className="flex justify-center">
+            <Image
+              src="/images/festive.png"
+              alt="festive"
+              height={300}
+              width={300}
+            />
+          </div>
           <Navbar />
           <div className="text-center max-w-md mx-auto mt-3 p-8 bg-opacity-10">
             <h1 className="text-4xl mb-6 font-bold text-center">

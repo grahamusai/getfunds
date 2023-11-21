@@ -13,10 +13,12 @@ const Switcher = () => {
           setFrequency("weekly");
         }}
         className={` font-bold py-1 w-40 ${
-          toggle ? "bg-black text-white" : "bg-slate-400 bg-opacity-40 text-black "
+          toggle
+            ? "bg-black text-white"
+            : "bg-slate-400 bg-opacity-40 text-black "
         } rounded-l-full`}
       >
-        <p className=" text-sm">Weekly</p> <p className=" text-xs">Mon-Sat</p>
+        <p className=" text-sm">Daily</p> <p className=" text-xs">Mon-Sat</p>
       </button>
       <button
         onClick={() => {
@@ -24,10 +26,12 @@ const Switcher = () => {
           setFrequency("daily");
         }}
         className={` font-bold py-1 w-40 ${
-          toggle ? "bg-slate-400 bg-opacity-40 text-black " : "bg-black text-white"
+          toggle
+            ? "bg-slate-400 bg-opacity-40 text-black "
+            : "bg-black text-white"
         } rounded-r-full`}
       >
-        <p className=" text-sm">Daily</p>
+        <p className=" text-sm">Weekly</p>
         <p className=" text-xs">4 Times Monthly</p>
       </button>
     </div>
