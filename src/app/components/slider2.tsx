@@ -9,7 +9,7 @@ const Slider2 = (props: { min: number }) => {
   return (
     <div className="flex flex-col">
       {/* <span className="italic text-xs text-center mb-4">Slide-&gt;</span> */}
-       
+
       <CircularSlider
         width={120}
         // @ts-ignore
@@ -30,7 +30,9 @@ const Slider2 = (props: { min: number }) => {
         labelColor="#000"
         verticalOffset="20px"
         onChange={(duration: number) => setDuration(duration)}
-      />
+      >
+        <p></p>
+      </CircularSlider>
     </div>
   );
 };
