@@ -3,7 +3,6 @@ import Link from "next/link";
 import Slider from "../components/slider"; 
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
-
 import { round } from "../libs/helpers";
 import Switcher from "../components/switcher";
 import InputSwitcher from "../components/input_switcher";
@@ -52,13 +51,13 @@ const Congrats = () => {
   };
 
   return (
-    <div className="space-y-5 text-center max-w-md mx-auto mt-3 p-8 bg-opacity-10">
-      <h1 className="text-4xl font-bold mt-5 ">Congratulations</h1>
+    <div className="space-y-5 text-center max-w-md mx-auto bg-opacity-10">
+      <h1 className="text-4xl font-bold pt-4">Congratulations</h1>
       <p className="text-2xl">
-        You Qualify for up to <span>R{maxAmount} in funding</span>
+        You Qualify for up to <span className="text-white font-bold">R{maxAmount} </span>in funding
       </p>
 
-      <div className=" flex justify-between items-center gap-10">
+      <div className="flex flex-row items-center gap-5">
         <div>
           <div className=" w-32 h-32">
             {useSlider ? <Slider max={maxAmount} /> : <FundingInput />}
@@ -67,13 +66,11 @@ const Congrats = () => {
             <InputSwitcher />
           </div>
         </div>
-        <p className=" font-black text-xl text-start">
-          How much funding do you need?
-        </p>
+        <p className=" font-black text-xl text-left mt-[-3rem]">Slide For Amount</p>
       </div>
       <div className=" flex flex-row items-center gap-10">
         <Slider2 min={3} />
-        <p className=" font-black text-xl text-left">Over what term?</p>
+        <p className=" font-black text-xl text-left">Slide For Term</p>
       </div>
       <span className="text-center mt-5">Choose</span>
       <Switcher />
@@ -84,18 +81,18 @@ const Congrats = () => {
           </div>
           <div className="w-1/2 h-full py-2">
             <h3 className=" text sm">
-              Repayments <br /> Amount
+              Repayments <br /> 
             </h3>
           </div>
         </div>
         <div className=" flex items-center">
           <div className="w-1/2 h-12 flex items-center justify-center">
-            <h3 className=" underline">
+            <h3 className=" underline font-bold text-sm">
               R{`${round(calculateTotalPay() || 0)}`}
             </h3>
           </div>
           <div className="w-1/2 h-12 flex items-center justify-center">
-            <h3 className=" underline">
+            <h3 className=" underline font-bold text">
               R{round(calculateRepayAmount() || 0)}
             </h3>
           </div>

@@ -8,7 +8,8 @@ const Slider2 = (props: { min: number }) => {
   const { duration, setDuration } = useGlobalState();
   return (
     <div className="flex flex-col">
-      <span className="italic text-xs text-center mb-5">Slide-&gt;</span> 
+      {/* <span className="italic text-xs text-center mb-4">Slide-&gt;</span> */}
+       
       <CircularSlider
         width={120}
         // @ts-ignore

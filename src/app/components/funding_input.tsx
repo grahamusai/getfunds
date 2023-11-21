@@ -2,6 +2,7 @@ import { useGlobalState } from "../libs/global_state";
 
 const FundingInput = () => {
   const { neededAmount, setNeededAmount } = useGlobalState();
+  const maxAmount = neededAmount * 0.7;
   return (
     <div>
       <label className=" ml-4">Enter Amount</label>

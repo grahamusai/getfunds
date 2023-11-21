@@ -8,7 +8,10 @@ const Slider = (props: { max: number }) => {
   const { neededAmount, setNeededAmount } = useGlobalState();
   return (
     <div>
-       <span className="italic text-xs mb-2">Slide-&gt;</span> 
+      <div className="mb-1">
+      {/* <span className="italic text-xs pb-3">Slide-&gt;</span>  */} 
+      </div>
+      <div className="">
       <CircularSlider
         width={120}
         // @ts-ignore
@@ -30,6 +33,7 @@ const Slider = (props: { max: number }) => {
         verticalOffset="20px"
         onChange={(value: number) => setNeededAmount(value)}
       />
+      </div>
     </div>
   );
 };
