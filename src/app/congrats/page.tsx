@@ -9,6 +9,7 @@ import InputSwitcher from "../components/input_switcher";
 import FundingInput from "../components/funding_input";
 import Image from "next/image";
 
+
 const Congrats = () => {
   const {
     grossProfit,
@@ -52,67 +53,76 @@ const Congrats = () => {
   };
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <div className="space-y-5 text-center max-w-md mx-auto bg-opacity-10">
-        <h1 className="text-4xl font-bold pt-4">Congratulations</h1>
-        <p className="text-2xl">
-          You Qualify for up to{" "}
-          <span className="text-white font-bold">R{maxAmount} </span>in funding
-        </p>
-
-        <div className="flex flex-row items-center gap-5">
+    <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
+      
+      <h1 className="text-center font-extrabold text-4xl mt-3">Cash Advance Calculator</h1>
+      <div className="mx-auto bg-white mt-8 border border-2 border-slate-900">
+        <div className="flex flex-col sm:flex-row ">
+        {/* First Column */}
+        <div className="w-full sm:w-1/2 bg-white mx-auto flex justify-center  p-5">
           <div>
-            <div className=" w-32 h-32">
-              {useSlider ? <Slider max={maxAmount} /> : <FundingInput />}
+            <div className="mb-12">
+            <h1 className="text-sm">What is your monthly turnover? <span className="text-red">*</span> </h1>
+            <input 
+            type="number"
+            name="turnover"
+            placeholder="R100,000"
+            className=" border-2 border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+            />
             </div>
-            <div className="m-3">
-              <InputSwitcher />
+          
+            <div className="mb-12">
+              <h1 className="text-sm">Funding required</h1>
+              <p>*insert slider</p>
             </div>
-          </div>
-          <p className=" font-black text-xl text-left mt-[-3rem]">
-            Slide For Amount
-          </p>
-        </div>
-        <div className=" flex flex-row items-center gap-10">
-          <Slider2 min={3} />
-          <p className=" font-black text-xl text-left">Slide For Term</p>
-        </div>
-        <span className="text-center mt-5">Choose</span>
-        <Switcher />
-        <div className=" w-full border-[3px] border-black rounded-2xl overflow-hidden">
-          <div className="flex items-center bg-black text-white">
-            <div className="w-1/2 h-full py-2 border-r-2 border-white">
-              <h3 className=" text sm">Total Pay Over</h3>
+
+            <div className="mb-12">
+              <h1 className="text-sm">Repayment Term</h1>
+              <p>*insert slider</p>
             </div>
-            <div className="w-1/2 h-full py-2">
-              <h3 className=" text sm">
-                Repayments <br />
-              </h3>
+
+            <div className="">
+              <h1 className="text-sm">Select Repayment Method</h1>
+              <Switcher />
             </div>
           </div>
-          <div className=" flex items-center">
-            <div className="w-1/2 h-12 flex items-center justify-center">
-              <h3 className=" underline font-bold text-sm">
-                R{`${round(calculateTotalPay() || 0)}`}
-              </h3>
-            </div>
-            <div className="w-1/2 h-12 flex items-center justify-center">
-              <h3 className=" underline font-bold text">
-                R{round(calculateRepayAmount() || 0)}
-              </h3>
-            </div>
-          </div>
+          
+          
         </div>
 
-        <Link href="/application">
-          <button className=" w-full bg-black mt-3 p-5 text-white rounded-full flex items-center justify-center">
-            Apply Now
-          </button>
-        </Link>
-        <span className="italic text-sm mb-4 p-5">
-          All quotes are subject to due diligence
-        </span>
+        {/* Second Column */}
+          <div className="w-full sm:w-1/2 border bg-green-500 px-5 py-3">
+            <div className="border-slate-900 border-b-2 p-5">
+              <h1 className="text-sm">Pre-approved for:</h1>
+              <h1 className="text-4xl  font-bold">R700,000</h1>
+            </div>
+            <div className="flex flex-col sm:flex-row p-3 border-b-2 border-slate-900">
+              <div className=" mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
+                <h1 className="text-lg font-bold">Total Payover</h1>
+                <h2 className="text-2xl font-bold">R786,000</h2>
+              </div>
+              <div className="border-slate-900 border-l-2 text-center mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
+                <h1 className="text-lg font-bold ">Repayments</h1>
+                <h2 className="text-2xl font-bold">R786,000</h2>
+              </div>
+            </div>
+            <div className="p-5 mt-3">
+              <h1 className="font-bold p-2">How it works</h1>
+              <p className="text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem maxime dicta repudiandae veniam molestias inventore assumenda adipisci! Aspernatur officiis tempora ipsa sit nostrum voluptatum? Reprehenderit, molestias tempore. Iure, pariatur eveniet?</p>
+            </div>
+            
+          </div>
+        </div>
       </div>
+      <div className="flex items-center justify-center ">
+            <button
+              className="border border-slate-900 border-1 bg-green-500 mt-3 px-10 py-3 text-slate-900 flex items-center justify-center"
+              type="button"
+            >
+              APPLY NOW
+            </button>
+            
+          </div>
     </div>
   );
 };

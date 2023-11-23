@@ -5,7 +5,7 @@ const Switcher = () => {
   const { setFrequency } = useGlobalState();
 
   return (
-    <div className="flex flex-row items-center justify-center">
+    <div className="flex flex-row items-center justify-center pt-2">
       <span className="text-center mt-5">&nbsp;</span>
       <button
         onClick={() => {
@@ -14,9 +14,9 @@ const Switcher = () => {
         }}
         className={` font-bold py-1 w-40 ${
           toggle
-            ? "bg-black text-white"
-            : "bg-slate-400 bg-opacity-40 text-black "
-        } rounded-l-full`}
+            ? "bg-green-500 text-white"
+            : "bg-white bg-opacity-40 text-black "
+        } border border-slate-900 border-1`}
       >
         <p className=" text-sm">Daily</p> <p className=" text-xs">Mon-Sat</p>
       </button>
@@ -27,9 +27,9 @@ const Switcher = () => {
         }}
         className={` font-bold py-1 w-40 ${
           toggle
-            ? "bg-slate-400 bg-opacity-40 text-black "
-            : "bg-black text-white"
-        } rounded-r-full`}
+            ? "bg-white bg-opacity-40 text-black "
+            : "bg-green-500 text-white"
+        } border border-slate-900 border-1`}
       >
         <p className=" text-sm">Weekly</p>
         <p className=" text-xs">4 Times Monthly</p>
