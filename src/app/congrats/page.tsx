@@ -3,11 +3,17 @@ import Link from "next/link";
 import Slider from "../components/slider";
 import Slider2 from "../components/slider2";
 import { useGlobalState } from "../libs/global_state";
+import { useState } from "react";
 import { round } from "../libs/helpers";
 import Switcher from "../components/switcher";
 import InputSwitcher from "../components/input_switcher";
 import FundingInput from "../components/funding_input";
 import Image from "next/image";
+import { FaLinkedinIn } from "react-icons/fa";
+import { BiMailSend } from "react-icons/bi";
+import { BiLinkExternal } from "react-icons/bi";
+
+
 
 
 const Congrats = () => {
@@ -35,6 +41,13 @@ const Congrats = () => {
     }
   };
 
+  const [rangeValue, setRangeValue] = useState(50000);
+
+// @ts-ignore
+  const handleRangeChange = (event) => {
+    setRangeValue(event.target.value);
+  };
+
   const calculateRepayAmount = () => {
     const totalDays = [0, 0, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300];
     const totalWeeks = [0, 0, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48];
@@ -54,7 +67,14 @@ const Congrats = () => {
 
   return (
     <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
-      
+      <div className="flex justify-center">
+            <Image
+              src="/images/logo.png"
+              alt="festive"
+              height={200}
+              width={200}
+            />
+          </div>
       <h1 className="text-center font-extrabold text-4xl mt-3">Cash Advance Calculator</h1>
       <div className="mx-auto bg-white mt-8 border border-2 border-slate-900">
         <div className="flex flex-col sm:flex-row ">
@@ -62,7 +82,7 @@ const Congrats = () => {
         <div className="w-full sm:w-1/2 bg-white mx-auto flex justify-center  p-5">
           <div>
             <div className="mb-12">
-            <h1 className="text-sm">What is your monthly turnover? <span className="text-red">*</span> </h1>
+            <h1 className="text-sm">What is your monthly turnover? <span className="text-red">*</span></h1>
             <input 
             type="number"
             name="turnover"
@@ -73,7 +93,16 @@ const Congrats = () => {
           
             <div className="mb-12">
               <h1 className="text-sm">Funding required</h1>
-              <p>*insert slider</p>
+              <input
+              type="range"
+              min="0"
+              max="100000"
+              step="10000"
+              value={rangeValue}
+              onChange={handleRangeChange}
+              className="bg-green-500"
+            />
+            <p>Selected value: {rangeValue}</p>
             </div>
 
             <div className="mb-12">
@@ -114,13 +143,33 @@ const Congrats = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center ">
-            <button
-              className="border border-slate-900 border-1 bg-green-500 mt-3 px-10 py-3 text-slate-900 flex items-center justify-center"
+      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
+        <div className="flex flex-col sm:flex-row ">
+          {/* first Column */}
+          <div className="flex w-full sm:w-1/2  py-7 text-xl">
+            <div className="px-2 py-1">
+              <FaLinkedinIn />
+            </div>
+            <div  className="px-2 py-1">
+              <BiMailSend />
+            </div>
+             
+            <div  className="px-2 ">
+              <h2>getfunds.co.za</h2>
+            </div>
+          </div>
+          {/* first Column */}
+          <div className="w-full sm:w-1/2 flex justify-center py-3">
+          <button
+              className="border border-slate-900 border-1 bg-green-500 mt-5 px-10 py-2 text-slate-900 flex items-center justify-center"
               type="button"
             >
               APPLY NOW
             </button>
+          </div>
+        </div>
+      </div>
+        <div className="flex items-center justify-center ">
             
           </div>
     </div>
