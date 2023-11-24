@@ -17,9 +17,11 @@ import { BiLinkExternal } from "react-icons/bi";
 
 
 const Congrats = () => {
+
+  const { setTurnOver, setGrossProfit, turnOver, grossProfit } =
+    useGlobalState();
   const {
-    grossProfit,
-    turnOver,
+  
     neededAmount,
     duration,
     frequency,
@@ -42,14 +44,12 @@ const Congrats = () => {
   };
 
   const [rangeValue, setRangeValue] = useState(50000);
-
 // @ts-ignore
   const handleRangeChange = (event) => {
     setRangeValue(event.target.value);
   };
 
-  const [rangeValue2, setRangeValue2] = useState(50000);
-
+  const [rangeValue2, setRangeValue2] = useState(5);
 // @ts-ignore
   const handleRangeChange2 = (e) => {
     setRangeValue2(e.target.value);
@@ -73,7 +73,8 @@ const Congrats = () => {
   };
 
   return (
-    <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
+    <div className="flex justify-center items-center">
+        <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
       <div className="flex justify-center">
             <Image
               src="/images/logo.png"
@@ -82,7 +83,7 @@ const Congrats = () => {
               width={200}
             />
           </div>
-      <h1 className="text-center font-extrabold text-4xl sm:hidden md:hidden lg:hidden mt-3">Cash Advance Calculator</h1>
+      <h1 className="text-center font-extrabold text-4xl mt-3">Cash Advance Calculator</h1>
       <div className="mx-auto bg-white mt-8 border border-2 border-slate-900">
         <div className="flex flex-col sm:flex-row ">
         {/* First Column */}
@@ -116,9 +117,9 @@ const Congrats = () => {
               <h1 className="text-sm">Repayment Term</h1>
               <input
               type="range"
-              min="0"
-              max="100000"
-              step="10000"
+              min="3"
+              max="10"
+              step="1"
               value={rangeValue2}
               onChange={handleRangeChange2}
               className="bg-green-500"
@@ -148,7 +149,7 @@ const Congrats = () => {
               </div>
               <div className="border-slate-900 border-l-2 text-center mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                 <h1 className="text-lg font-bold ">Repayments</h1>
-                <h2 className="text-2xl font-bold">R786,000</h2>
+                <h2 className="text-2xl font-bold">R1,280</h2>
               </div>
             </div>
             <div className="p-5 mt-3">
@@ -189,6 +190,8 @@ const Congrats = () => {
             
           </div>
     </div>
+    </div>
+    
   );
 };
 
