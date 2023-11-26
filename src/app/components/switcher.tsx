@@ -18,7 +18,7 @@ const Switcher = () => {
             : "bg-white bg-opacity-40 text-black "
         } border border-slate-900 border-1`}
       >
-        <p className=" text-sm">Daily</p> <p className=" text-xs">Mon-Sat</p>
+        <p className=" text-sm">Weekly</p> <p className=" text-xs">4 Times Monthly</p>
       </button>
       <button
         onClick={() => {
@@ -31,8 +31,8 @@ const Switcher = () => {
             : "bg-green-500 text-white"
         } border border-slate-900 border-1`}
       >
-        <p className=" text-sm">Weekly</p>
-        <p className=" text-xs">4 Times Monthly</p>
+        <p className=" text-sm">Daily</p>
+        <p className=" text-xs">Mon - Sat</p>
       </button>
     </div>
   );
