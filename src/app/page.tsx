@@ -99,7 +99,7 @@ const Congrats = (props: { max: number }) => {
             type="number"
             name="turnover"
             placeholder="R100,000"
-            className=" border-2 border-slate-900 px-12 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+            className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             onChange={(e) => {
               setTurnOver(parseInt(e.target.value));
             }}
@@ -173,7 +173,7 @@ const Congrats = (props: { max: number }) => {
         </div>
       </div>
       
-      <div className="flex flex-row sm:flex-row bg-green-500 border border-slate-900 p-6 mx-2 rounded mt-2">
+      <div className="flex flex-row sm:flex-row  lg:hidden bg-green-500 border border-slate-900 p-6 mx-2 rounded mt-2">
         <div className="w-full ">
         <h1 className="text-sm">Pre-approved for:</h1>
               <h1 className="text-2xl  font-bold">R{`${round(maxAmount)}`}</h1>
