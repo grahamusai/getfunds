@@ -26,7 +26,7 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setNeededAmount: (value: number) => set({ neededAmount: value }),
   duration: 0,
   setDuration: (value: number) => set({ duration: value }),
-  frequency: "weekly",
+  frequency: "daily",
   setFrequency: (value: string) => set({ frequency: value }),
   useSlider: true,
   setUseSlider: (value: boolean) => set({ useSlider: value }),
