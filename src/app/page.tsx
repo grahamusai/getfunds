@@ -78,7 +78,7 @@ const Congrats = () => {
             <div className="w-full sm:w-1/2 bg-white mx-auto flex justify-center  p-5">
               <div>
               <div className="mb-12">
-              <h1 className="text-sm">What is your monthly turnover? <span className="text-red">*</span></h1>
+              <h1 className="text-sm">What is your monthly turnover? <span className="text-rose-500">*</span></h1>
               <input 
             type="number"
             name="turnover"
@@ -91,7 +91,7 @@ const Congrats = () => {
             </div>
 
                 <div className="mb-12">
-                  <h1 className="text-sm">Funding required</h1>
+                  <h1 className="text-sm">Funding required <span className="text-rose-500">*</span></h1>
                   <input
               type="range"
               min={30000}
@@ -108,7 +108,7 @@ const Congrats = () => {
                 </div>
 
                 <div className="mb-12">
-                  <h1 className="text-sm">Repayment Term</h1>
+                  <h1 className="text-sm">Repayment Term<span className="text-rose-500">*</span></h1>
                   <div className="flex flex-row">
                   <h2 className="mr-2">3</h2>
                   <input
@@ -129,7 +129,7 @@ const Congrats = () => {
                 </div>
 
                 <div className="">
-                  <h1 className="text-sm">Select Repayment Method</h1>
+                  <h1 className="text-sm">Select Repayment Method <span className="text-rose-500">*</span></h1>
                   <Switcher />
                 </div>
               </div>

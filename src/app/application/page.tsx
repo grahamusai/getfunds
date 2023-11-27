@@ -1,22 +1,36 @@
 "use client"
 import { useState } from "react";
+import { useFormspark } from "@formspark/use-formspark";
 
 
 const Details = () => {
+  const [submit, submitting] = useFormspark({
+    formId: "6JJkZDDwF"
+    
+  });
+  const [name,  setName] = useState("");
+  
+
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-opacity-30 rounded-md shadow-md">
+      <div className="max-w-md mx-auto mt-10 p-6 bg-opacity-30 rounded-md shadow-md text-slate-900">
         <h2 className="text-2xl font-semibold mb-4">Business Details</h2>
-        <form action="https://formsubmit.co/your@email.com" method="POST">
+        <form onSubmit={async (e) => {
+        e.preventDefault();
+        await submit({ name })
+      
+        }}>
+
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
               Business Name
             </label>
             <input
-              className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
               id="name"
               name="business"
               type="text"
               placeholder=""
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -24,7 +38,7 @@ const Details = () => {
               Owners Name
             </label>
             <input
-              className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
               id="name"
               name="owner"
               type="text"
@@ -36,7 +50,7 @@ const Details = () => {
               Phone Number
             </label>
             <input
-              className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
               id="name"
               type="number"
               name="phone"
@@ -49,7 +63,7 @@ const Details = () => {
               Email
             </label>
             <input
-              className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
               id="email"
               type="email"
               name="email"
@@ -61,7 +75,7 @@ const Details = () => {
               Amount Requested
             </label>
             <input
-              className="w-full border-2 border-black px-5 py-3 mt-2 rounded-full bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
               id="email"
               type="number"
               name="amount"
@@ -93,13 +107,12 @@ const Details = () => {
   
           <div className="flex items-center justify-center">
             <button
-              className=" w-full bg-black mt-3 p-5 text-white rounded-full flex items-center justify-center"
-              type="button"
+              className=" w-full bg-green-500 mt-3 p-5 text-white  flex items-center justify-center"
+              type="submit"
             >
               Submit
             </button>
           </div>
-          <span className="italic text-center text-sm mb-4 p-5">All qoutes are subject to due deligence</span>
         </form>
       </div>
     );

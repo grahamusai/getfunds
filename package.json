@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspark/use-formspark": "^0.1.39",
     "@fseehawer/react-circular-slider": "^2.6.1",
     "next": "14.0.0",
     "react": "^18",
