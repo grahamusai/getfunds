@@ -104,23 +104,28 @@ const Congrats = () => {
               }}
               className="bg-green-500"
             />
-                  <p>Selected value: {rangeValue}</p>
+                  <p className="text-center text-green-600 font-bold text-lg">{neededAmount}</p>
                 </div>
 
                 <div className="mb-12">
                   <h1 className="text-sm">Repayment Term</h1>
+                  <div className="flex flex-row">
+                  <h2 className="mr-2">3</h2>
                   <input
-              type="range"
-              min="3"
-              max="10"
-              step="1"
-              // @ts-ignore
-              onChange={(e) => {
-                setDuration(parseInt(e.target.value));
-              }}
-              className="bg-green-500"
-            />
-                  <p>Selected value: {rangeValue2}</p>
+                      type="range"
+                      min="3"
+                      max="10"
+                      step="1"
+                      // @ts-ignore
+                      onChange={(e) => {
+                        setDuration(parseInt(e.target.value));
+                      }}
+                      className="bg-green-500"
+                    />
+                    <h2 className="ml-2">10</h2>
+                  </div>
+                 
+                  <p className="text-center text-green-600 font-bold text-lg">{duration} months</p>
                 </div>
 
                 <div className="">
@@ -160,7 +165,7 @@ const Congrats = () => {
         <h1 className="text-sm">Pre-approved for:</h1>
               <h1 className="text-2xl  font-bold">R{`${round(maxAmount)}`}</h1>
         </div>
-        <div className="w-full border-l-2 border-slate-900 pl-2">
+        <div className="w-full border-l-2 border-slate-900 pl-10">
             <div>
                 <h1 className="text-sm">Total Payover</h1>
                 <h2 className="text-lg font-bold">R{`${round(calculateTotalPay() || 0)}`}</h2>
