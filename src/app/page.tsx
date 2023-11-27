@@ -18,23 +18,18 @@ import { BiLinkExternal } from "react-icons/bi";
 
 const Congrats = (props: { max: number }) => {
 
-  const {
-    setTurnOver, 
-    setGrossProfit, 
-    setNeededAmount, 
-    setDuration, 
-    turnOver, 
-    grossProfit,
-    neededAmount,
-    duration,
+  const { setTurnOver, setGrossProfit, setNeededAmount, setDuration, turnOver, grossProfit,neededAmount,duration,
     frequency,
     useSlider,
   } = useGlobalState();
 
+
+  
   const repaymentAmount = (grossProfit: number, duration: number) => {
     return grossProfit * duration;
   };
   const maxAmount = turnOver * 0.7;
+ 
   const interest = 0.075;
 
   const calculateTotalPay = () => {
@@ -120,11 +115,14 @@ const Congrats = (props: { max: number }) => {
               }}
               className="bg-green-500"
             />
-            <p>Selected value: {neededAmount}</p>
+            <p className="text-center text-lg">{neededAmount}</p>
             </div>
 
             <div className="mb-12">
               <h1 className="text-sm">Repayment Term</h1>
+
+              <div className="flex flex-row">
+              <h2 className="mx-2">3</h2>
               <input
               type="range"
               min="3"
@@ -136,7 +134,10 @@ const Congrats = (props: { max: number }) => {
               }}
               className="bg-green-500"
             />
-             <p>Selected value: {duration}</p>
+            <h2 className="mx-2">10</h2>
+              </div>
+              
+             <p className="text-center text-lg">{duration} months</p>
             </div>
 
             <div className="">
@@ -174,7 +175,7 @@ const Congrats = (props: { max: number }) => {
       </div>
       
       <div className="flex flex-row sm:flex-row  lg:hidden bg-green-500 border border-slate-900 p-6 mx-2 rounded mt-2">
-        <div className="w-full ">
+        <div className="w-full mt-5">
         <h1 className="text-sm">Pre-approved for:</h1>
               <h1 className="text-2xl  font-bold">R{`${round(maxAmount)}`}</h1>
         </div>
@@ -204,13 +205,14 @@ const Congrats = (props: { max: number }) => {
              
             <div  className="px-2 ">
               <h2>getfunds.co.za</h2>
+             
             </div>
           </div>
           {/* first Column */}
           <div className="w-full sm:w-1/2 flex justify-center py-3">
-          <Link href="/congrats">
+          <Link href="/application">
             <button
-                className="border border-slate-900 border-1 bg-green-500 mt-5 px-10 py-2 text-slate-900 flex items-center justify-center"
+                className="border border-slate-900 border-1 bg-green-500 mt-0 md:mt-3 px-10 py-2 text-slate-900 flex items-center justify-center"
                 type="button"
               >
                 APPLY NOW

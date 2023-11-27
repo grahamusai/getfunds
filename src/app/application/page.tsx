@@ -99,7 +99,6 @@ const Details = () => {
               Submit
             </button>
           </div>
-          <span className="italic text-center text-sm mb-4 p-5">All qoutes are subject to due deligence</span>
         </form>
       </div>
     );
