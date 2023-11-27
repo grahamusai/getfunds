@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { useFormspark } from "@formspark/use-formspark";
+import Navbar from "../components/Navbar";
 
 
 const Details = () => {
@@ -12,11 +13,13 @@ const Details = () => {
   
 
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-opacity-30 rounded-md shadow-md text-slate-900">
+      <div className="max-w-md mx-auto mt-5 p-6 bg-opacity-30 rounded-md shadow-md text-slate-900">
         <h2 className="text-2xl font-semibold mb-4">Business Details</h2>
         <form onSubmit={async (e) => {
         e.preventDefault();
+        
         await submit({ name })
+        alert("Your email has been submitted successfully <br> A funding specialist will be in touch with you shortly")
       
         }}>
 
@@ -38,7 +41,7 @@ const Details = () => {
               Owners Name
             </label>
             <input
-              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+              className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
               id="name"
               name="owner"
               type="text"

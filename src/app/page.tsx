@@ -17,8 +17,10 @@ const Congrats = () => {
   const repaymentAmount = (grossProfit: number, duration: number) => {
     return grossProfit * duration;
   };
-  const maxAmount = turnOver * 0.7;
-  const interest = 0.075;
+  const maxAmount: number = turnOver * 0.7;
+const interest: number = 0.075;
+
+
 
   const calculateTotalPay = () => {
     const interestRates = [0, 0, 0, 12, 16, 18, 21, 23, 25, 28, 30, 27.5, 3.0];
@@ -28,6 +30,15 @@ const Congrats = () => {
       return neededAmount + (neededAmount * interestRate) / 100;
     }
   };
+  
+  const formattedMaxAmount: string = maxAmount.toLocaleString("en-US");
+  const displayMaxAmount = () => {
+    if (formattedMaxAmount < "30000"){
+        return " "
+    }else{
+      return formattedMaxAmount
+    }
+  }
 
   const [rangeValue, setRangeValue] = useState(50000);
   // @ts-ignore
@@ -69,7 +80,7 @@ const Congrats = () => {
             width={200}
           />
         </div>
-        <h1 className="text-center font-extrabold text-4xl hidden sm:block mt-3">
+        <h1 className="text-center font-extrabold text-4xl mt-3">
           Cash Advance Calculator
         </h1>
         <div className="mx-auto bg-white mt-8 border border-2 border-slate-900">
@@ -80,30 +91,32 @@ const Congrats = () => {
               <div className="mb-12">
               <h1 className="text-sm">What is your monthly turnover? <span className="text-rose-500">*</span></h1>
               <input 
-            type="number"
-            name="turnover"
-            placeholder="R100,000"
-            className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
-            onChange={(e) => {
-              setTurnOver(parseInt(e.target.value));
-            }}
-            />
+                type="number"
+                name="turnover"
+                max={100000000}
+                min={50000}
+                placeholder="R100,000"
+                className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+                onChange={(e) => {
+                  setTurnOver(parseInt(e.target.value));
+                }}
+              />
             </div>
 
                 <div className="mb-12">
                   <h1 className="text-sm">Funding required <span className="text-rose-500">*</span></h1>
                   <input
-              type="range"
-              min={30000}
-              max={maxAmount}
-              step="10000"
-              // value={rangeValue}
-              // @ts-ignore
-              onChange={(e) => {
-                setNeededAmount(parseInt(e.target.value));
-              }}
-              className="bg-green-500"
-            />
+                    type="range"
+                    min={30000}
+                    max={maxAmount}
+                    step="10000"
+                    // value={rangeValue}
+                    // @ts-ignore
+                    onChange={(e) => {
+                      setNeededAmount(parseInt(e.target.value));
+                    }}
+                    className="bg-green-500"
+                  />
                   <p className="text-center text-green-600 font-bold text-lg">{neededAmount}</p>
                 </div>
 
@@ -139,7 +152,7 @@ const Congrats = () => {
           <div className="w-full sm:w-1/2 hidden sm:block border bg-green-500 px-5 py-3">
             <div className="border-slate-900 border-b-2 p-5">
               <h1 className="text-sm">Pre-approved for:</h1>
-              <h1 className="text-4xl  font-bold">R{`${round(maxAmount)}`}</h1>
+              <h1 className="text-4xl  font-bold">R{`${((formattedMaxAmount))}`}</h1>
             </div>
             <div className="flex flex-col sm:flex-row p-3 border-b-2 border-slate-900">
               <div className=" mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
