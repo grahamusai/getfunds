@@ -193,20 +193,7 @@ const interest: number = 0.075;
       {/* Contact Information */}
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
         <div className="flex flex-col sm:flex-row text-center sm:text-left">
-          {/* first Column */}
-          <div className="flex w-full sm:w-1/2 justify-center py-7 text-xl">
-            <div className="px-2 py-1">
-              <FaLinkedinIn />
-            </div>
-            <div  className="px-2 py-1">
-              <BiMailSend />
-            </div>
-             
-            <div  className="px-2 ">
-              <h2>getfunds.co.za</h2>
-             
-            </div>
-          </div>
+          
           {/* first Column */}
           <div className="w-full sm:w-1/2 flex justify-center py-3">
           <Link href="/application">
@@ -218,6 +205,19 @@ const interest: number = 0.075;
               </button>
           </Link>
           
+          </div>
+          {/* first Column */}
+          <div className="flex w-full sm:w-1/2 justify-center py-7 text-xl">
+            <div className="px-2 py-1">
+              <FaLinkedinIn />
+            </div>
+            <div  className="px-2 py-1">
+              <BiMailSend />
+            </div>
+             
+            <div  className="px-2 ">
+                <h2>getfunds.co.za</h2>
+            </div>
           </div>
         </div>
       </div>
