@@ -117,7 +117,7 @@ const interest: number = 0.075;
                     }}
                     className="bg-green-500"
                   />
-                  <p className="text-center text-green-600 font-bold text-lg">{neededAmount}</p>
+                  <p className="text-center text-green-600 font-bold text-lg">R{neededAmount}</p>
                 </div>
 
                 <div className="mb-12">
