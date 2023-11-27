@@ -176,7 +176,7 @@ const interest: number = 0.075;
       <div className="flex flex-row sm:flex-row  lg:hidden bg-green-500 border border-slate-900 p-6 mx-2 rounded mt-2">
         <div className="w-full mt-5">
         <h1 className="text-sm">Pre-approved for:</h1>
-              <h1 className="text-2xl  font-bold">R{`${round(maxAmount)}`}</h1>
+              <h1 className="text-2xl  font-bold">R{`${((formattedMaxAmount))}`}</h1>
         </div>
         <div className="w-full border-l-2 border-slate-900 pl-10">
             <div>

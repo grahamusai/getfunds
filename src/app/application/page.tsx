@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useFormspark } from "@formspark/use-formspark";
 import Navbar from "../components/Navbar";
+import AlertBox from "../components/alertbox";
 
 
 const Details = () => {
