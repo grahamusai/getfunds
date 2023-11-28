@@ -196,3 +196,13 @@ input[type="range"]:active::-moz-range-progress {
 input[type="range"]:disabled::-moz-range-thumb {
 	cursor: not-allowed;
 }
+
+
+#activeInput {
+	padding: 10px;
+	font-size: 16px;
+  }
+  
+  .active {
+	/* Add styles for the active state */
+  }
