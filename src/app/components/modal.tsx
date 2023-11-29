@@ -3,7 +3,7 @@ const Modal = () => {
   const { setIsModalOpen, modalErrorMessage } = useGlobalState();
   return (
     <div className=" w-screen h-screen absolute flex items-center justify-center shadow-">
-      <div className=" h-28 w-52 bg-green-500 flex flex-col items-center justify-center border-2 border-black">
+      <div className=" h-28 w-52 bg-green-500 flex flex-col items-center justify-center border-2 border-black p-2 text-center">
         <p>{modalErrorMessage}</p>
         <button
           onClick={() => setIsModalOpen(false)}
