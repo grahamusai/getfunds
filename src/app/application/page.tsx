@@ -20,7 +20,7 @@ const Details = () => {
         e.preventDefault();
 
         await submit({ name })
-        alert("Your email has been submitted successfully <br> A funding specialist will be in touch with you shortly")
+        alert("Your email has been submitted successfully \n \n A funding specialist will be in touch with you shortly")
 
       }}>
 

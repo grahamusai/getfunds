@@ -35,6 +35,9 @@ const Congrats = () => {
     if (turnOver <= 30000) {
       setIsModalOpen(true);
       setModalErrorMessage("Monthly turnover must be above R30 thousand.");
+    }else if (turnOver > 100000000){
+      setIsModalOpen(true);
+      setModalErrorMessage("You cannot enter an amount above R100M")
     }
   };
 
