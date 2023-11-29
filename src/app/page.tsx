@@ -14,6 +14,10 @@ const Congrats = () => {
   // @ts-ignore
   const handleKeyDown = (event) => {
     event.preventDefault();
+    if (turnOver === 0) {
+      setIsModalOpen(true);
+      setModalErrorMessage("Please enter your monthly turnover.");
+    }
     return false;
   };
 
@@ -129,7 +133,7 @@ const Congrats = () => {
                       <span className="text-rose-500">*</span>
                     </h1>
                     <input
-                      type="text"
+                      type="number"
                       id="activeInput"
                       name="turnover"
                       max={100000000}
@@ -156,6 +160,7 @@ const Congrats = () => {
                       // @ts-ignore
                       onKeyDown={handleKeyDown}
                       onFocus={handleFocus}
+                      onTouchStart={handleFocus}
                       onChange={(e) => {
                         setNeededAmount(parseInt(e.target.value));
                       }}
@@ -179,6 +184,7 @@ const Congrats = () => {
                         step="1"
                         // @ts-ignore
                         onKeyDown={handleKeyDown}
+                        onTouchStart={handleFocus}
                         onFocus={handleFocus}
                         onChange={(e) => {
                           setDuration(parseInt(e.target.value));
@@ -195,7 +201,7 @@ const Congrats = () => {
 
                   <div className="">
                     <h1 className="text-sm">
-                      Select Repayment Method{" "}
+                      Select Repayment Method
                       <span className="text-rose-500">*</span>
                     </h1>
                     <Switcher />
@@ -282,7 +288,10 @@ const Congrats = () => {
               {/* first Column */}
               <div className="flex w-full sm:w-1/2 justify-center py-7 text-xl">
                 <div className="px-2 py-1">
-                  <Link href="https://za.linkedin.com/company/get-funds">
+                  <Link
+                    target="_blank"
+                    href="https://za.linkedin.com/company/get-funds"
+                  >
                     <h1>
                       <FaLinkedinIn />
                     </h1>
