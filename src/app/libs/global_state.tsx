@@ -15,6 +15,10 @@ interface GlobalState {
   setFrequency: (value: string) => void;
   useSlider: boolean;
   setUseSlider: (value: boolean) => void;
+  isModalOpen: boolean;
+  setIsModalOpen: (value: boolean) => void;
+  modalErrorMessage: string;
+  setModalErrorMessage: (value: string) => void;
 }
 
 export const useGlobalState = create<GlobalState>((set) => ({
@@ -30,4 +34,8 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setFrequency: (value: string) => set({ frequency: value }),
   useSlider: true,
   setUseSlider: (value: boolean) => set({ useSlider: value }),
+  isModalOpen: false,
+  setIsModalOpen: (value: boolean) => set({ isModalOpen: value }),
+  modalErrorMessage: "",
+  setModalErrorMessage: (value: string) => set({ modalErrorMessage: value }),
 }));
