@@ -8,6 +8,7 @@ const Switcher = () => {
     <div className="flex flex-row items-center justify-center pt-2">
       <span className="text-center mt-5">&nbsp;</span>
       <button
+        disabled={toggle}
         onClick={() => {
           setToggle(!toggle);
           setFrequency("weekly");
@@ -18,10 +19,11 @@ const Switcher = () => {
             : "bg-white bg-opacity-40 text-black "
         } border border-slate-900 border-1`}
       >
-        <p className=" text-sm">Weekly</p>{" "}
+        <p className=" text-sm">Weekly</p>
         <p className=" text-xs">4 Times Monthly</p>
       </button>
       <button
+        disabled={!toggle}
         onClick={() => {
           setToggle(!toggle);
           setFrequency("daily");

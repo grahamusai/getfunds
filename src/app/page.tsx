@@ -9,6 +9,7 @@ import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BiMailSend } from "react-icons/bi";
 import Modal from "./components/modal";
+import TermsModal from "./components/termsModal";
 
 const Congrats = () => {
   // @ts-ignore
@@ -49,6 +50,8 @@ const Congrats = () => {
     modalErrorMessage,
     isModalOpen,
     setModalErrorMessage,
+    termsModalIsOpen,
+    setTermsModalIsOpen,
   } = useGlobalState();
   const { neededAmount, duration, frequency, useSlider } = useGlobalState();
 
@@ -108,6 +111,7 @@ const Congrats = () => {
   return (
     <div>
       {isModalOpen && <Modal />}
+      {termsModalIsOpen && <TermsModal />}
       <div className="flex justify-center items-center text-slate-900">
         <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
           <div className="flex justify-center">
@@ -275,7 +279,7 @@ const Congrats = () => {
           <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
             <div className="flex flex-col sm:flex-row text-center sm:text-left">
               {/* first Column */}
-              <div className="w-full sm:w-1/2 flex justify-center py-3">
+              <div className="w-full sm:w-1/2 flex gap-5 justify-center py-3">
                 <Link href="/application">
                   <button
                     className="border border-slate-900 border-1 bg-green-500 mt-0 md:mt-3 px-10 py-2 text-slate-900 flex items-center justify-center"
@@ -284,6 +288,12 @@ const Congrats = () => {
                     APPLY NOW
                   </button>
                 </Link>
+                <button
+                  onClick={() => setTermsModalIsOpen(true)}
+                  className="lg:hidden uppercase"
+                >
+                  How this works
+                </button>
               </div>
               {/* first Column */}
               <div className="flex w-full sm:w-1/2 justify-center py-7 text-xl">

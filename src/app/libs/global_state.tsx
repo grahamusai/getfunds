@@ -17,6 +17,8 @@ interface GlobalState {
   setUseSlider: (value: boolean) => void;
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
+  termsModalIsOpen: boolean;
+  setTermsModalIsOpen: (value: boolean) => void;
   modalErrorMessage: string;
   setModalErrorMessage: (value: string) => void;
 }
@@ -36,6 +38,8 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setUseSlider: (value: boolean) => set({ useSlider: value }),
   isModalOpen: false,
   setIsModalOpen: (value: boolean) => set({ isModalOpen: value }),
+  termsModalIsOpen: false,
+  setTermsModalIsOpen: (value: boolean) => set({ termsModalIsOpen: value }),
   modalErrorMessage: "",
   setModalErrorMessage: (value: string) => set({ modalErrorMessage: value }),
 }));
