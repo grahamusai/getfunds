@@ -171,7 +171,7 @@ const Congrats = () => {
                       onChange={(e) => {
                         setNeededAmount(parseInt(e.target.value));
                       }}
-                      className="bg-green-500"
+                      className="bg-green-500 z-0"
                     />
                     <p className="text-center text-green-600 font-bold text-lg">
                       R{neededAmount}
@@ -196,7 +196,7 @@ const Congrats = () => {
                         onChange={(e) => {
                           setDuration(parseInt(e.target.value));
                         }}
-                        className="bg-green-500"
+                        className="bg-green-500 z-0"
                       />
                       <h2 className="ml-2">10</h2>
                     </div>
@@ -238,7 +238,7 @@ const Congrats = () => {
                   </div>
                 </div>
                 <div className="p-5 mt-3">
-                  <h1 className="font-bold p-2">How it works</h1>
+                  <h1 className="font-bold p-2 bg-green-500">How it works</h1>
                   <p className="text-sm">
                     Get Funds is a Specialist Consulting firm, partnered with
                     best in class funders. Offering the correct funder match
@@ -293,9 +293,9 @@ const Congrats = () => {
                 </Link>
                 <button
                   onClick={() => setTermsModalIsOpen(true)}
-                  className="lg:hidden uppercase"
+                  className="lg:hidden uppercase underline"
                 >
-                  How this works
+                  How it works?
                 </button>
               </div>
               {/* first Column */}

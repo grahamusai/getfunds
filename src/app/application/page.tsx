@@ -39,7 +39,7 @@ const Details = () => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Owners Name
+            Owner Name
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
@@ -51,7 +51,7 @@ const Details = () => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Phone Number
+            Mobile Number
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
