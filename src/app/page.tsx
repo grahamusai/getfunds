@@ -36,7 +36,7 @@ const Congrats = () => {
     if (turnOver <= 30000) {
       setIsModalOpen(true);
       setModalErrorMessage("Monthly turnover must be above R30 thousand.");
-    }else if (turnOver > 100000000){
+    } else if (turnOver > 100000000) {
       setIsModalOpen(true);
       setModalErrorMessage("You cannot enter an amount above R100M")
     }
@@ -73,14 +73,14 @@ const Congrats = () => {
     }
   };
 
-  const formattedMaxAmount: string = maxAmount.toLocaleString("en-US");
-  const displayMaxAmount = () => {
-    if (formattedMaxAmount < "30000") {
-      return " ";
-    } else {
-      return formattedMaxAmount;
-    }
-  };
+ let formattedMaxAmount = 0
+  if (isNaN(formattedMaxAmount)){
+    formattedMaxAmount = 0;
+  } else {
+    // @ts-ignore
+    formattedMaxAmount = maxAmount.toLocaleString("en-US");
+  }
+
 
   const [rangeValue, setRangeValue] = useState(50000);
   // @ts-ignore
@@ -163,8 +163,8 @@ const Congrats = () => {
                       min={30000}
                       max={maxAmount}
                       step="10000"
-                      // value={rangeValue}
-                      // @ts-ignore
+                      //value={maxAmount}
+                     
                       onKeyDown={handleKeyDown}
                       onFocus={handleFocus}
                       onTouchStart={handleFocus}

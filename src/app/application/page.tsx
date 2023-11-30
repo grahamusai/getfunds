@@ -10,7 +10,26 @@ const Details = () => {
     formId: "6JJkZDDwF"
 
   });
-  const [name, setName] = useState("");
+  const [businessname, setName] = useState("");
+  const [owner, setOwner] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [amount, setAmount] = useState("");
+
+  // @ts-ignore
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Perform manual validation
+    if (businessname.trim() === '' || owner.trim() === '' || phone.trim() === ''
+      || email.trim() === '' || amount.trim() === '') {
+      alert('Please fill in all required fields');
+      return;
+    }
+
+    // Continue with form submission logic
+    console.log('Form submitted!');
+  };
 
 
   return (
@@ -19,52 +38,57 @@ const Details = () => {
       <form onSubmit={async (e) => {
         e.preventDefault();
 
-        await submit({ name })
+        await submit({ businessname })
         alert("Your email has been submitted successfully \n \n A funding specialist will be in touch with you shortly")
 
       }}>
 
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Business Name
+            Business Name<span className="text-rose-500">*</span>
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
-            id="name"
+            id="businessname"
             name="business"
             type="text"
             placeholder=""
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Owner Name
+            Owner Name<span className="text-rose-500">*</span>
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
-            id="name"
+            id="owner"
             name="owner"
             type="text"
             placeholder="John Doe"
+            onChange={(e) => setOwner(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-            Mobile Number
+            Mobile Number<span className="text-rose-500">*</span>
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
-            id="name"
+            id="phone"
             type="number"
             name="phone"
             placeholder=""
+            onChange={(e) => setPhone(e.target.value)}
+            required
           />
         </div>
 
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-            Email
+            Email<span className="text-rose-500">*</span>
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
@@ -72,18 +96,22 @@ const Details = () => {
             type="email"
             name="email"
             placeholder="john.doe@example.com"
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-            Amount Requested
+            Amount Requested<span className="text-rose-500">*</span>
           </label>
           <input
             className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
-            id="email"
+            id="amount"
             type="number"
             name="amount"
             placeholder="100000"
+            onChange={(e) => setAmount(e.target.value)}
+            required
           />
         </div>
 
@@ -91,7 +119,7 @@ const Details = () => {
 
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
-            What is most important to you?
+            What is most important to you?<span className="text-rose-500">*</span>
           </label>
           <div>
             <label className="inline-flex items-center mr-6">
