@@ -160,6 +160,13 @@ const Congrats = () => {
                         setTurnOver(parseInt(e.target.value));
                       }}
                       onBlur={handleBlur}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          // @ts-ignore
+                          e.target.blur(); // Blur the input to hide the keyboard
+                        }
+                      }}
                     />
                   </div>
 
