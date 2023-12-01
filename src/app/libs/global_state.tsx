@@ -19,6 +19,8 @@ interface GlobalState {
   setIsModalOpen: (value: boolean) => void;
   termsModalIsOpen: boolean;
   setTermsModalIsOpen: (value: boolean) => void;
+  submitModalIsOpen: boolean;
+  setSubmitModalIsOpen: (value: boolean) => void;
   modalErrorMessage: string;
   setModalErrorMessage: (value: string) => void;
 }
@@ -40,6 +42,8 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setIsModalOpen: (value: boolean) => set({ isModalOpen: value }),
   termsModalIsOpen: false,
   setTermsModalIsOpen: (value: boolean) => set({ termsModalIsOpen: value }),
+  submitModalIsOpen: false,
+  setSubmitModalIsOpen: (value: boolean) => set({ termsModalIsOpen: value }),
   modalErrorMessage: "",
   setModalErrorMessage: (value: string) => set({ modalErrorMessage: value }),
 }));

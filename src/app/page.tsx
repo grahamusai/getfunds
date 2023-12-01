@@ -29,6 +29,13 @@ const Congrats = () => {
       setIsModalOpen(true);
       setModalErrorMessage("Please enter your monthly turnover.");
     }
+
+    if (operatingTime === false) {
+      setIsModalOpen(true);
+      setModalErrorMessage(
+        "You cannot use the calculator if you have not been operating for at least 12 months."
+      );
+    }
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -38,7 +45,7 @@ const Congrats = () => {
       setModalErrorMessage("Monthly turnover must be above R30 thousand.");
     } else if (turnOver > 100000000) {
       setIsModalOpen(true);
-      setModalErrorMessage("You cannot enter an amount above R100M")
+      setModalErrorMessage("You cannot enter an amount above R100M");
     }
   };
 
@@ -111,6 +118,8 @@ const Congrats = () => {
     return neededAmount;
   };
 
+  const [operatingTime, setOperatingTime] = useState(false);
+
   return (
     <div>
       {isModalOpen && <Modal />}
@@ -157,13 +166,22 @@ const Congrats = () => {
                   <div className="mb-12 flex flex-row">
                     <div>
                       <label className="block text-sm">
-                        Have you been trading for more than 12 months?<span className="text-rose-500">&nbsp;</span>
+                        Have you been trading for more than 12 months?
+                        <span className="text-rose-500">&nbsp;</span>
                       </label>
                     </div>
                     <div>
                       <label className="inline-flex items-center mr-6">
-                        <input type="radio" className=" text-indigo-600 bg-transparent" name="gender" value="male" />
-                      </label> <br />
+                        <input
+                          type="checkbox"
+                          onChange={() => {
+                            setOperatingTime(!operatingTime);
+                            console.log(operatingTime);
+                          }}
+                          className=" accent-green-600 bg-transparent text-2xl"
+                        />
+                      </label>
+                      <br />
                     </div>
                   </div>
 
