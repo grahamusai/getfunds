@@ -3,8 +3,12 @@ import { useState } from "react";
 import { useFormspark } from "@formspark/use-formspark";
 import Navbar from "../components/Navbar";
 import AlertBox from "../components/alertbox";
+import { useGlobalState } from "../libs/global_state";
+import { redirect } from "next/navigation";
 
 const Details = () => {
+  const { submitModalIsOpen, setSubmitModalIsOpen } = useGlobalState();
+
   const [submit, submitting] = useFormspark({
     formId: "6JJkZDDwF",
   });
@@ -33,6 +37,7 @@ const Details = () => {
 
     // Continue with form submission logic
     console.log("Form submitted!");
+    redirect("https://getfunds.co.za/");
   };
 
   return (
