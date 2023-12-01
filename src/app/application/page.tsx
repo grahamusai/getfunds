@@ -24,6 +24,7 @@ const Details = () => {
     if (businessname.trim() === '' || owner.trim() === '' || phone.trim() === ''
       || email.trim() === '' || amount.trim() === '') {
       alert('Please fill in all required fields');
+
       return;
     }
 
@@ -38,7 +39,7 @@ const Details = () => {
       <form onSubmit={async (e) => {
         e.preventDefault();
 
-        await submit({ businessname })
+        await submit({ businessname, owner, phone, email, amount })
         alert("Your email has been submitted successfully \n \n A funding specialist will be in touch with you shortly")
 
       }}>

@@ -73,14 +73,14 @@ const Congrats = () => {
     }
   };
 
- let formattedMaxAmount = 0
-  if (isNaN(formattedMaxAmount)){
-    formattedMaxAmount = 0;
-  } else {
-    // @ts-ignore
-    formattedMaxAmount = maxAmount.toLocaleString("en-US");
-  }
-
+  const formattedMaxAmount: string = maxAmount.toLocaleString("en-US");
+  const displayMaxAmount = () => {
+    if (formattedMaxAmount < "30000") {
+      return " ";
+    } else {
+      return formattedMaxAmount;
+    }
+  };
 
   const [rangeValue, setRangeValue] = useState(50000);
   // @ts-ignore
@@ -154,6 +154,19 @@ const Congrats = () => {
                     />
                   </div>
 
+                  <div className="mb-12 flex flex-row">
+                    <div>
+                      <label className="block text-sm">
+                        Have you been trading for more than 12 months?<span className="text-rose-500">&nbsp;</span>
+                      </label>
+                    </div>
+                    <div>
+                      <label className="inline-flex items-center mr-6">
+                        <input type="radio" className=" text-indigo-600 bg-transparent" name="gender" value="male" />
+                      </label> <br />
+                    </div>
+                  </div>
+
                   <div className="mb-12">
                     <h1 className="text-sm">
                       Funding required <span className="text-rose-500">*</span>
@@ -163,8 +176,8 @@ const Congrats = () => {
                       min={30000}
                       max={maxAmount}
                       step="10000"
-                      //value={maxAmount}
-                     
+                      // value={rangeValue}
+                      // @ts-ignore
                       onKeyDown={handleKeyDown}
                       onFocus={handleFocus}
                       onTouchStart={handleFocus}
