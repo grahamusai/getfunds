@@ -145,7 +145,7 @@ const Congrats = () => {
                       name="turnover"
                       max={100000000}
                       min={50000}
-                      placeholder="R100,000"
+                      placeholder="example R100,000"
                       className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
                       onChange={(e) => {
                         setTurnOver(parseInt(e.target.value));
