@@ -29,13 +29,6 @@ const Congrats = () => {
       setIsModalOpen(true);
       setModalErrorMessage("Please enter your monthly turnover.");
     }
-
-    if (operatingTime === false) {
-      setIsModalOpen(true);
-      setModalErrorMessage(
-        "You cannot use the calculator if you have not been operating for at least 12 months."
-      );
-    }
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -117,8 +110,6 @@ const Congrats = () => {
 
     return neededAmount;
   };
-
-  const [operatingTime, setOperatingTime] = useState(false);
 
   return (
     <div>
