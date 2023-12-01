@@ -7,8 +7,6 @@ import { useGlobalState } from "../libs/global_state";
 import { redirect } from "next/navigation";
 
 const Details = () => {
-  const { submitModalIsOpen, setSubmitModalIsOpen } = useGlobalState();
-
   const [submit, submitting] = useFormspark({
     formId: "6JJkZDDwF",
   });
@@ -17,6 +15,7 @@ const Details = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [amount, setAmount] = useState("");
+  const {} = useGlobalState();
 
   // @ts-ignore
   const handleSubmit = (event) => {

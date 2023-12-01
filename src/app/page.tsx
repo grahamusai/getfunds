@@ -170,28 +170,6 @@ const Congrats = () => {
                     />
                   </div>
 
-                  <div className="mb-12 flex flex-row">
-                    <div>
-                      <label className="block text-sm">
-                        Have you been trading for more than 12 months?
-                        <span className="text-rose-500">&nbsp;</span>
-                      </label>
-                    </div>
-                    <div>
-                      <label className="inline-flex items-center mr-6">
-                        <input
-                          type="checkbox"
-                          onChange={() => {
-                            setOperatingTime(!operatingTime);
-                            console.log(operatingTime);
-                          }}
-                          className=" accent-green-600 bg-transparent text-2xl"
-                        />
-                      </label>
-                      <br />
-                    </div>
-                  </div>
-
                   <div className="mb-12">
                     <h1 className="text-sm">
                       Funding required <span className="text-rose-500">*</span>
