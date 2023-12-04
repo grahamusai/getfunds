@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 
 const Details = () => {
   const [submit, submitting] = useFormspark({
-    formId: "6JJkZDDwF",
+    formId: "opxueG6Xb",
   });
   const [businessname, setName] = useState("");
   const [owner, setOwner] = useState("");
