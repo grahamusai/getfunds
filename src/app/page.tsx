@@ -36,9 +36,9 @@ const Congrats = () => {
     if (turnOver <= 30000) {
       setIsModalOpen(true);
       setModalErrorMessage("Monthly turnover must be above R30 thousand.");
-    } else if (turnOver > 100000000) {
+    } else if (turnOver > 15000000) {
       setIsModalOpen(true);
-      setModalErrorMessage("You cannot enter an amount above R100M");
+      setModalErrorMessage("You cannot enter an amount above R15M");
     }
   };
 
@@ -170,7 +170,7 @@ const Congrats = () => {
                       min={30000}
                       max={maxAmount}
                       step="10000"
-                      // value={rangeValue}
+                      value={maxAmount}
                       // @ts-ignore
                       onKeyDown={handleKeyDown}
                       onFocus={handleFocus}
