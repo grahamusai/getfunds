@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useGlobalState } from "./libs/global_state";
 import { useState } from "react";
-import { round } from "./libs/helpers";
+import { formatCurrency, round } from "./libs/helpers";
 import Switcher from "./components/switcher";
 import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -115,7 +115,7 @@ const Congrats = () => {
     <div>
       {isModalOpen && <Modal />}
       {termsModalIsOpen && <TermsModal />}
-      <div className="flex justify-center items-center text-slate-900">
+      <div className="flex justify-center items-center text-slate-900 h-screen">
         <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
           <div className="flex justify-center">
             <Image
@@ -170,7 +170,8 @@ const Congrats = () => {
                       min={30000}
                       max={maxAmount}
                       step="10000"
-                      value={maxAmount}
+                      // value={maxAmount}
+                      defaultValue={maxAmount}
                       // @ts-ignore
                       onKeyDown={handleKeyDown}
                       onFocus={handleFocus}
@@ -181,7 +182,10 @@ const Congrats = () => {
                       className="bg-green-500 z-0"
                     />
                     <p className="text-center text-green-600 font-bold text-lg">
-                      R{neededAmount}
+                      R
+                      {formatCurrency(
+                        neededAmount === 0 ? maxAmount : neededAmount
+                      )}
                     </p>
                   </div>
 
@@ -196,6 +200,7 @@ const Congrats = () => {
                         min="3"
                         max="10"
                         step="1"
+                        defaultValue={3}
                         // @ts-ignore
                         onKeyDown={handleKeyDown}
                         onTouchStart={handleFocus}
@@ -234,13 +239,13 @@ const Congrats = () => {
                   <div className=" mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                     <h1 className="text-lg font-bold ">Total Payover</h1>
                     <h2 className="text-2xl font-bold">
-                      R{`${round(calculateTotalPay() || 0)}`}
+                      R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
                     </h2>
                   </div>
                   <div className="border-slate-900 border-l-2 lg:text-center mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                     <h1 className="text-lg font-bold ">Repayments</h1>
                     <h2 className="text-2xl font-bold">
-                      R{round(calculateRepayAmount() || 0)}
+                      R{formatCurrency(round(calculateRepayAmount() || 0))}
                     </h2>
                   </div>
                 </div>

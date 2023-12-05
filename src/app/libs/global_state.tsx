@@ -32,7 +32,7 @@ export const useGlobalState = create<GlobalState>((set) => ({
   setGrossProfit: (value: number) => set({ grossProfit: value }),
   neededAmount: 0,
   setNeededAmount: (value: number) => set({ neededAmount: value }),
-  duration: 0,
+  duration: 3,
   setDuration: (value: number) => set({ duration: value }),
   frequency: "daily",
   setFrequency: (value: string) => set({ frequency: value }),
