@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { useGlobalState } from "./libs/global_state";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { formatCurrency, round } from "./libs/helpers";
 import Switcher from "./components/switcher";
 import Image from "next/image";
@@ -149,6 +149,7 @@ const Congrats = () => {
                       className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
                       onChange={(e) => {
                         setTurnOver(parseInt(e.target.value));
+                        setNeededAmount(maxAmount);
                       }}
                       onBlur={handleBlur}
                       onKeyDown={(e) => {
@@ -277,13 +278,13 @@ const Congrats = () => {
                 <div>
                   <h1 className="text-sm">Total Payover</h1>
                   <h2 className="text-lg font-bold">
-                    R{`${round(calculateTotalPay() || 0)}`}
+                    R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
                   </h2>
                 </div>
                 <div className="mt-2">
                   <h1 className="text-sm">Repayments</h1>
                   <h2 className="text-lg font-bold">
-                    R{round(calculateRepayAmount() || 0)}
+                    R{formatCurrency(round(calculateRepayAmount() || 0))}
                   </h2>
                 </div>
               </div>
@@ -331,7 +332,7 @@ const Congrats = () => {
                 </div>
 
                 <div className="px-2 ">
-                  <Link href="https://getfunds.co.za">
+                  <Link href="https://getfunds.co.za" target="_blank">
                     <h2 className="underline">getfunds.co.za</h2>
                   </Link>
                 </div>
