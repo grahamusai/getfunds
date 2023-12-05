@@ -115,7 +115,7 @@ const Congrats = () => {
     <div>
       {isModalOpen && <Modal />}
       {termsModalIsOpen && <TermsModal />}
-      <div className="flex justify-center items-center text-slate-900 h-screen">
+      <div className="flex justify-center items-center text-slate-900">
         <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
           <div className="flex justify-center">
             <Image
@@ -175,6 +175,7 @@ const Congrats = () => {
                       defaultValue={maxAmount}
                       // @ts-ignore
                       onKeyDown={handleKeyDown}
+                      disabled={isModalOpen}
                       onFocus={handleFocus}
                       onTouchStart={handleFocus}
                       onChange={(e) => {
@@ -202,6 +203,7 @@ const Congrats = () => {
                         max="10"
                         step="1"
                         defaultValue={3}
+                        disabled={isModalOpen}
                         // @ts-ignore
                         onKeyDown={handleKeyDown}
                         onTouchStart={handleFocus}
