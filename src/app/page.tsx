@@ -232,11 +232,22 @@ const Congrats = () => {
               </div>
               {/* Second Column */}
               <div className="w-full sm:w-1/2 hidden sm:block border bg-green-500 px-5 py-3">
-                <div className="border-slate-900 border-b-2 p-5">
-                  <h1 className="text-sm">Pre-approved for:</h1>
-                  <h1 className="text-4xl  font-bold">
-                    R{`${formattedMaxAmount}`}
-                  </h1>
+                <div className="border-slate-900 border-b-2 p-5 flex flex-col sm:flex-row">
+                  <div className=" w-full sm:w-1/2">
+                    <h1 className="text-sm">Pre-approved for:</h1>
+                    <h1 className="text-4xl  font-bold">
+                      R{`${formattedMaxAmount}`}
+                    </h1>
+                  </div>
+                  <div className=" w-full sm:w-1/2">
+                    <h1 className="text-sm">Selected Amounts</h1>
+                    <h1 className="text-4xl font-bold">
+                      R{formatCurrency(
+                        neededAmount === 0 ? maxAmount : neededAmount
+                      )}
+                    </h1>
+                  </div>
+
                 </div>
                 <div className="flex flex-col sm:flex-row p-3 border-b-2 border-slate-900">
                   <div className=" mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
@@ -244,7 +255,6 @@ const Congrats = () => {
                     <h2 className="text-2xl font-bold">
                       R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
                     </h2>
-                  <span className="text-xs">Selected Amount</span>
                   </div>
                   <div className="border-slate-900 border-l-2 lg:text-center mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                     <h1 className="text-lg font-bold ">Repayments</h1>
@@ -271,11 +281,21 @@ const Congrats = () => {
 
           <div className=" lg:hidden bg-green-500 border border-slate-900 p-6 mx-2 rounded mt-2">
             <div className="flex flex-row sm:flex-row ">
-              <div className="w-full mt-5">
-                <h1 className="text-sm">Pre-approved for:</h1>
-                <h1 className="text-2xl  font-bold">
-                  R{`${formattedMaxAmount}`}
-                </h1>
+              <div className="w-full ">
+                <div>
+                  <h1 className="text-sm">Pre-approved for:</h1>
+                  <h1 className="text-2xl  font-bold">
+                    R{`${formattedMaxAmount}`}
+                  </h1>
+                </div>
+                <div className="mt-2">
+                  <h1 className="text-sm">Selected Amounts</h1>
+                  <h1 className="text-2xl font-bold">
+                    R{formatCurrency(
+                      neededAmount === 0 ? maxAmount : neededAmount
+                    )}
+                  </h1>
+                </div>
               </div>
               <div className="w-full border-l-2 border-slate-900 pl-10">
                 <div>
@@ -283,7 +303,6 @@ const Congrats = () => {
                   <h2 className="text-lg font-bold">
                     R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
                   </h2>
-                  <span className="bg-slate-600 text-white text-xs p-1 rounded-full">Selected Amount</span>
                 </div>
                 <div className="mt-2">
                   <h1 className="text-sm">Repayments</h1>

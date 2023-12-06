@@ -50,6 +50,7 @@ const Details = () => {
           alert(
             "Your email has been submitted successfully \n \n A funding specialist will be in touch with you shortly"
           );
+          redirect("https://getfunds.co.za/");
         }}
       >
         <div className="mb-4">
@@ -60,11 +61,11 @@ const Details = () => {
             Business Name<span className="text-rose-500">*</span>
           </label>
           <input
-            className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+            className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             id="businessname"
             name="business"
             type="text"
-            placeholder=""
+            placeholder="Your Business Name"
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -94,11 +95,11 @@ const Details = () => {
             Mobile Number<span className="text-rose-500">*</span>
           </label>
           <input
-            className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+            className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             id="phone"
             type="number"
             name="phone"
-            placeholder=""
+            placeholder="062456789"
             onChange={(e) => setPhone(e.target.value)}
             required
           />
@@ -112,7 +113,7 @@ const Details = () => {
             Email<span className="text-rose-500">*</span>
           </label>
           <input
-            className="w-full border-2 border-black px-5 py-3 mt-2  bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+            className="w-full border-2 border-black px-5 py-3 mt-2 focus:placeholder-opacity-0 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
             id="email"
             type="email"
             name="email"
