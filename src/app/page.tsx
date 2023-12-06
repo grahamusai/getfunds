@@ -240,8 +240,8 @@ const Congrats = () => {
                     </h1>
                   </div>
                   <div className=" w-full sm:w-1/2">
-                    <h1 className="text-sm">Selected Amounts</h1>
-                    <h1 className="text-4xl font-bold">
+                    <h1 className="text-sm text-center">Selected Amounts</h1>
+                    <h1 className="text-4xl font-bold text-center">
                       R{formatCurrency(
                         neededAmount === 0 ? maxAmount : neededAmount
                       )}
