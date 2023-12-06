@@ -244,6 +244,7 @@ const Congrats = () => {
                     <h2 className="text-2xl font-bold">
                       R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
                     </h2>
+                  <span className="text-xs">Selected Amount</span>
                   </div>
                   <div className="border-slate-900 border-l-2 lg:text-center mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                     <h1 className="text-lg font-bold ">Repayments</h1>
@@ -282,6 +283,7 @@ const Congrats = () => {
                   <h2 className="text-lg font-bold">
                     R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
                   </h2>
+                  <span className="bg-slate-600 text-white text-xs p-1 rounded-full">Selected Amount</span>
                 </div>
                 <div className="mt-2">
                   <h1 className="text-sm">Repayments</h1>
