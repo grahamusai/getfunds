@@ -222,7 +222,7 @@ const Congrats = () => {
                 </div>
               </div>
               {/* Second Column */}
-              <div className="w-full sm:w-1/2 hidden sm:block border bg-green-500 px-5 py-3">
+              <div className="w-full sm:w-1/2 hidden sm:block border text-slate-900 bg-green-500 px-5 py-3">
                 <div className="border-slate-900 border-b-2 p-5 flex flex-col sm:flex-row">
                   <div className=" w-full sm:w-1/2">
                     <h1 className="text-sm">Pre-approved for:</h1>
@@ -266,6 +266,10 @@ const Congrats = () => {
                     We use our economies of scale to get you the best deals.
                   </p>
                 </div>
+                <div className="flex flex-row text-center mx-auto">
+                  <h1 className="p-3 bg-slate-900 text-white rounded-full m-1">90% Approval rate</h1>
+                  <h1 className="p-3 bg-slate-900 text-white rounded-full m-1">1-3 days turnaround time</h1>
+                </div>
               </div>
             </div>
           </div>
@@ -274,7 +278,7 @@ const Congrats = () => {
             <div className="flex flex-row sm:flex-row ">
               <div className="w-full ">
                 <div>
-                  <h1 className="text-sm">Pre-approved for:</h1>
+                  <h1 className="text-sm">Pre-approved for:</h1> 
                   <h1 className="text-2xl  font-bold">
                     R{`${formattedMaxAmount}`}
                   </h1>
@@ -287,20 +291,23 @@ const Congrats = () => {
                       )}
                   </h1>
                 </div>
+                <h1 className="py-1 px-1 bg-slate-600 bg-opacity-40 text-white text-xs text-center rounded-full mt-5">90% Approval <br></br> rate</h1>
               </div>
               <div className="w-full border-l-2 border-slate-900 pl-10">
                 <div>
                   <h1 className="text-sm">Total Payover</h1>
-                  <h2 className="text-lg font-bold">
+                  <h2 className="text-2xl font-bold">
                   R{`${formatCurrency(round(calculateTotalPay() || 0) * 10)}`}
                   </h2>
                 </div>
                 <div className="mt-2">
                   <h1 className="text-sm">Repayments</h1>
-                  <h2 className="text-lg font-bold">
+                  <h2 className="text-2xl font-bold">
                   R{formatCurrency(round(calculateRepayAmount() || 0) * 10)}
                   </h2>
                 </div>
+                <h1 className="py-1 px-1 bg-slate-600 bg-opacity-40 text-white text-xs text-center rounded-full mt-5">1-3 days turnaround time</h1>
+
               </div>
             </div>
           </div>
