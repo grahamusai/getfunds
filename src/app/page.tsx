@@ -72,23 +72,6 @@ const Congrats = () => {
     }
   };
 
-  const calculateTotalPayOver = [
-    { duration: 3, interestRate: 12 },
-    { duration: 4, interestRate: 16 },
-    { duration: 5, interestRate: 18 },
-    { duration: 6, interestRate: 21 },
-    { duration: 7, interestRate: 23 },
-    { duration: 8, interestRate: 25 },
-    { duration: 9, interestRate: 28 },
-    { duration: 10, interestRate: 30 }
-  ];
-
-  if (calculateTotalPayOver[0].interestRate === 3){
-    // @ts-ignore
-    const interestRate = calculateTotalPayOver[0].interestRate;
-    return neededAmount + (neededAmount * interestRate) / 100;
-  }
-
   const formattedMaxAmount: string = maxAmount.toLocaleString("en-US");
 
 
