@@ -62,7 +62,6 @@ const Congrats = () => {
     return grossProfit * duration;
   };
   const maxAmount: number = turnOver * 0.7;
-  const interest: number = 0.075;
 
   const calculateTotalPay = () => {
     const interestRates = [0, 0, 0, 12, 16, 18, 21, 23, 25, 28, 30, 27.5, 3.0];
@@ -73,14 +72,25 @@ const Congrats = () => {
     }
   };
 
+  const calculateTotalPayOver = [
+    { duration: 3, interestRate: 12 },
+    { duration: 4, interestRate: 16 },
+    { duration: 5, interestRate: 18 },
+    { duration: 6, interestRate: 21 },
+    { duration: 7, interestRate: 23 },
+    { duration: 8, interestRate: 25 },
+    { duration: 9, interestRate: 28 },
+    { duration: 10, interestRate: 30 }
+  ];
+
+  if (calculateTotalPayOver[0].interestRate === 3){
+    // @ts-ignore
+    const interestRate = calculateTotalPayOver[0].interestRate;
+    return neededAmount + (neededAmount * interestRate) / 100;
+  }
+
   const formattedMaxAmount: string = maxAmount.toLocaleString("en-US");
-  const displayMaxAmount = () => {
-    if (formattedMaxAmount < "30000") {
-      return " ";
-    } else {
-      return formattedMaxAmount;
-    }
-  };
+
 
   const [rangeValue, setRangeValue] = useState(50000);
   // @ts-ignore
@@ -143,13 +153,13 @@ const Congrats = () => {
                       type="number"
                       id="activeInput"
                       name="turnover"
-                      max={100000000}
+                      max={15000000}
                       min={50000}
                       placeholder="example R100,000"
                       className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
                       onChange={(e) => {
                         setTurnOver(parseInt(e.target.value));
-                        setNeededAmount(maxAmount);
+                        setNeededAmount(maxAmount ) + '0';
                       }}
                       onBlur={handleBlur}
                       onKeyDown={(e) => {
@@ -173,20 +183,19 @@ const Congrats = () => {
                       step="10000"
                       // value={maxAmount}
                       defaultValue={maxAmount}
-                      // @ts-ignore
                       onKeyDown={handleKeyDown}
                       disabled={isModalOpen}
                       onFocus={handleFocus}
                       onTouchStart={handleFocus}
                       onChange={(e) => {
-                        setNeededAmount(parseInt(e.target.value));
+                        setNeededAmount(parseInt(e.target.value) / 10);
                       }}
                       className="bg-green-500 z-0"
                     />
                     <p className="text-center text-green-600 font-bold text-lg">
-                      R
+                      R 
                       {formatCurrency(
-                        neededAmount === 0 ? maxAmount : neededAmount
+                        neededAmount === 0 ? maxAmount  :  neededAmount * 10
                       )}
                     </p>
                   </div>
@@ -204,7 +213,6 @@ const Congrats = () => {
                         step="1"
                         defaultValue={3}
                         disabled={isModalOpen}
-                        // @ts-ignore
                         onKeyDown={handleKeyDown}
                         onTouchStart={handleFocus}
                         onFocus={handleFocus}
@@ -240,10 +248,10 @@ const Congrats = () => {
                     </h1>
                   </div>
                   <div className=" w-full sm:w-1/2">
-                    <h1 className="text-sm text-center">Selected Amounts</h1>
+                    <h1 className="text-sm text-center">Selected Amount</h1>
                     <h1 className="text-4xl font-bold text-center">
                       R{formatCurrency(
-                        neededAmount === 0 ? maxAmount : neededAmount
+                        neededAmount === 0 ? maxAmount : neededAmount * 10
                       )}
                     </h1>
                   </div>
@@ -253,13 +261,13 @@ const Congrats = () => {
                   <div className=" mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                     <h1 className="text-lg font-bold ">Total Payover</h1>
                     <h2 className="text-2xl font-bold">
-                      R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
+                      R{`${formatCurrency(round(calculateTotalPay() || 0) * 10)}`}
                     </h2>
                   </div>
                   <div className="border-slate-900 border-l-2 lg:text-center mt-3 w-full sm:w-1/2 bg-transparent mx-auto p-3">
                     <h1 className="text-lg font-bold ">Repayments</h1>
                     <h2 className="text-2xl font-bold">
-                      R{formatCurrency(round(calculateRepayAmount() || 0))}
+                      R{formatCurrency(round(calculateRepayAmount() || 0) * 10)}
                     </h2>
                   </div>
                 </div>
@@ -289,11 +297,11 @@ const Congrats = () => {
                   </h1>
                 </div>
                 <div className="mt-2">
-                  <h1 className="text-sm">Selected Amounts</h1>
+                  <h1 className="text-sm">Selected Amount</h1>
                   <h1 className="text-2xl font-bold">
-                    R{formatCurrency(
-                      neededAmount === 0 ? maxAmount : neededAmount
-                    )}
+                  R{formatCurrency(
+                        neededAmount === 0 ? maxAmount : neededAmount * 10
+                      )}
                   </h1>
                 </div>
               </div>
@@ -301,13 +309,13 @@ const Congrats = () => {
                 <div>
                   <h1 className="text-sm">Total Payover</h1>
                   <h2 className="text-lg font-bold">
-                    R{`${formatCurrency(round(calculateTotalPay() || 0))}`}
+                  R{`${formatCurrency(round(calculateTotalPay() || 0) * 10)}`}
                   </h2>
                 </div>
                 <div className="mt-2">
                   <h1 className="text-sm">Repayments</h1>
                   <h2 className="text-lg font-bold">
-                    R{formatCurrency(round(calculateRepayAmount() || 0))}
+                  R{formatCurrency(round(calculateRepayAmount() || 0) * 10)}
                   </h2>
                 </div>
               </div>
@@ -353,7 +361,6 @@ const Congrats = () => {
                     </h1>
                   </Link>
                 </div>
-
                 <div className="px-2 ">
                   <Link href="https://getfunds.co.za" target="_blank">
                     <h2 className="underline">getfunds.co.za</h2>

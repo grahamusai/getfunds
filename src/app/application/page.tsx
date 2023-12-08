@@ -50,7 +50,7 @@ const Details = () => {
           alert(
             "Your email has been submitted successfully \n \n A funding specialist will be in touch with you shortly"
           );
-          redirect("https://getfunds.co.za/");
+          window.location.href = 'https://getfunds.co.za/';
         }}
       >
         <div className="mb-4">
