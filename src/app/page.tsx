@@ -291,7 +291,7 @@ const Congrats = () => {
                       )}
                   </h1>
                 </div>
-                <h1 className="py-1 px-1 bg-slate-900  text-white text-xs text-center rounded-full mt-5">90% Approval <br></br> rate</h1>
+                <h1 className="py-1 px-1  text-slate-900 text-xs text-center rounded-full mt-5">90% Approval <br></br> rate</h1>
               </div>
               <div className="w-full border-l-2 border-slate-900 pl-10">
                 <div>
@@ -306,7 +306,7 @@ const Congrats = () => {
                   R{formatCurrency(round(calculateRepayAmount() || 0) * 10)}
                   </h2>
                 </div>
-                <h1 className="py-1 px-1 bg-slate-900  text-white text-xs text-center rounded-full mt-5">1-3 days turnaround time</h1>
+                <h1 className="py-1 px-1  text-slate-900 text-xs text-center rounded-full mt-5">1-3 days turnaround time</h1>
 
               </div>
             </div>
