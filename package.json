@@ -13,6 +13,7 @@
     "@fseehawer/react-circular-slider": "^2.6.1",
     "@supabase/supabase-js": "^2.39.0",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.3",
     "formik": "^2.4.5",
     "next": "14.0.0",
     "react": "^18",
