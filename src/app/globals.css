@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  outline: red 1px solid;
-} */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gruppo&display=swap');
+
+
+
+* {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 @layer base {
   input[type="number"]::-webkit-inner-spin-button,
@@ -13,20 +19,54 @@
     margin: 0;
   }
 }
+/* .partners {
+  background: url(public/images/joburg.jpg);
+} */
+
 /* === range theme and appearance === */
 input[type="range"] {
   font-size: 1.5rem;
-  width: 12.5em;
+  width: 10.5em;
 }
 
 input[type="range"] {
-  color: rgb(35, 239, 93);
+  color: rgb(21, 194, 194);
   --thumb-height: 1.125em;
   --track-height: 0.125em;
   --track-color: rgba(0, 0, 0, 0.2);
   --brightness-hover: 180%;
   --brightness-down: 80%;
   --clip-edges: 0.125em;
+}
+
+.glowing-border {
+  border: 2px solid #05b534;
+  box-shadow: 0 0 10px #05b534, 0 0 20px #05b534, 0 0 30px #05b534; /* Adjust colors and sizes as needed */
+}
+
+#myRange {
+  -webkit-appearance: none;  /* Removes default browser styling */
+  width: 100%;  /* Adjust width as needed */
+  outline: none;  /* Removes outline on focus */
+  border-radius: 10px;  /* Rounded corners for track */
+}
+
+#myRange::-webkit-slider-thumb {
+  -webkit-appearance: none;  /* Removes default browser styling */
+  appearance: none;  /* Standard for non-webkit browsers */
+
+  background: green;  /* Knob color */
+  border-radius: 50%;  /* Creates a circular knob */
+  cursor: pointer;  /* Shows grab cursor on hover */
+}
+
+#myRange::-moz-range-thumb {
+  appearance: none;  /* For mozilla browsers */
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 input[type="range"].win10-thumb {
@@ -38,17 +78,13 @@ input[type="range"].win10-thumb {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    background-color: #000;
-  }
+  
 
-  html::before {
-    background: radial-gradient(circle at center, #101112, #000);
-  }
+
 
   input[type="range"] {
-    color: #44ab3b;
-    --track-color: rgba(255, 255, 255, 0.1);
+    color: green;
+    --track-color: rgba(0, 0, 0, 0.1);
   }
 
   input[type="range"].win10-thumb {
@@ -202,6 +238,74 @@ input[type="range"]:disabled::-moz-range-thumb {
   font-size: 16px;
 }
 
-.active {
-  /* Add styles for the active state */
+
+.glow-point {
+  position: absolute;
+  box-shadow: 0rem 0rem 1.2rem 0.6rem rgb(var(--glow-rgb));
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-size: 1rem;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+@keyframes fall-1 {
+  0% {
+    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(0.25);
+    opacity: 0;
+  }
+  
+  5% {
+    transform: translate(10px, -10px) rotateX(45deg) rotateY(30deg) rotateZ(0deg) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translate(25px, 200px) rotateX(180deg) rotateY(270deg) rotateZ(90deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-2 {
+  0% {
+    transform: translate(0px, 0px) rotateX(-20deg) rotateY(10deg) scale(0.25);
+    opacity: 0;
+  }
+  
+  10% {
+    transform: translate(-10px, -5px) rotateX(-20deg) rotateY(10deg) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translate(-10px, 160px) rotateX(-90deg) rotateY(45deg) scale(0.25);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-3 {
+  0% {
+    transform: translate(0px, 0px) rotateX(0deg) rotateY(45deg) scale(0.5);
+    opacity: 0;
+  }
+  
+  15% {
+    transform: translate(7px, 5px) rotateX(0deg) rotateY(45deg) scale(1);
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translate(20px, 120px) rotateX(-180deg) rotateY(-90deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+ul{
+  text-decoration: dotted;
 }

@@ -118,14 +118,14 @@ const Congrats = () => {
               width={200}
             />
           </div>
-          <h1 className="text-center font-extrabold text-4xl mt-3">
+          <h1 className="text-center font-bold text-4xl mt-3">
             Cash Advance Calculator
           </h1>
-          <div className="mx-auto bg-white mt-8 border-2 border-slate-900">
-            <div className="flex flex-col sm:flex-row ">
+          <div className="mx-auto bg-white mt-8   rounded-lg">
+            <div className="flex flex-col gap-5 sm:flex-row ">
               {/* First Column */}
 
-              <div className="w-full sm:w-1/2 bg-white mx-auto flex justify-center  p-5">
+              <div className="w-full sm:w-1/2 bg-white mx-auto border-2 border-slate-900 flex justify-center rounded-lg p-5">
                 <div>
                   <div className="mb-12">
                     <h1 className="text-sm">
@@ -139,7 +139,7 @@ const Congrats = () => {
                       max={15000000}
                       min={50000}
                       placeholder="example R100,000"
-                      className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
+                      className=" border-2 w-full text-center border-slate-900 px-5 py-2 mt-2 bg-transparent placeholder-slate-700 focus:outline-none rounded-full focus:ring-2 focus:ring-slate-700 focus:shadow-2xl focus:border-transparent duration-100"
                       onChange={(e) => {
                         setTurnOver(parseInt(e.target.value));
                         setNeededAmount(maxAmount ) + '0';
@@ -222,7 +222,7 @@ const Congrats = () => {
                 </div>
               </div>
               {/* Second Column */}
-              <div className="w-full sm:w-1/2 hidden sm:block border text-slate-900 bg-green-500 px-5 py-3">
+              <div className="w-full sm:w-1/2 hidden sm:block border-2 border-slate-900 text-slate-900 rounded-lg bg-green-500 px-5 py-3">
                 <div className="border-slate-900 border-b-2 p-5 flex flex-col sm:flex-row">
                   <div className=" w-full sm:w-1/2">
                     <h1 className="text-sm">Pre-approved for:</h1>
@@ -319,7 +319,7 @@ const Congrats = () => {
               <div className="w-full sm:w-1/2 flex gap-5 justify-center py-3">
                 <Link href="/application">
                   <button
-                    className="border border-slate-900 border-1 bg-green-500 mt-0 md:mt-3 px-10 py-2 text-slate-900 flex items-center justify-center"
+                    className="border rounded-full border-slate-900 border-1 bg-green-500 mt-0 md:mt-3 px-10 py-3 text-slate-900 flex items-center justify-center"
                     type="button"
                   >
                     APPLY NOW

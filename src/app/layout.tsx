@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Get Funds",
   description: "Quick, Easy & Affordable",
+  
 };
 
 export default function RootLayout({
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <>
     <html lang="en">
+      
       <body className="bg-white">{children}</body>
     </html>
     <Analytics />
