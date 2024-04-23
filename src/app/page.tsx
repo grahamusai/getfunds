@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useGlobalState } from "./libs/global_state";
 import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { formatCurrency, round } from "./libs/helpers";
 import Switcher from "./components/switcher";
 import Image from "next/image";
@@ -12,6 +13,13 @@ import Modal from "./components/modal";
 import TermsModal from "./components/termsModal";
 
 const Congrats = () => {
+  const searchParams = useSearchParams();
+  const broker = searchParams.get("broker");
+
+  const userProfileLink = `/application/?${broker}`;
+  const userLink = broker ? `/user/${broker}` : '/user';
+  const url = broker ? `/application?broker=${broker}` : `/application`;
+
   // @ts-ignore
   const handleKeyDown = (event) => {
     event.preventDefault();
@@ -317,7 +325,7 @@ const Congrats = () => {
             <div className="flex flex-col sm:flex-row text-center sm:text-left">
               {/* first Column */}
               <div className="w-full sm:w-1/2 flex gap-5 justify-center py-3">
-                <Link href="/application">
+                <Link href={url}>
                   <button
                     className="border rounded-full border-slate-900 border-1 bg-green-500 mt-0 md:mt-3 px-10 py-3 text-slate-900 flex items-center justify-center"
                     type="button"

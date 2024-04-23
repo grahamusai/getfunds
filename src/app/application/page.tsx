@@ -1,12 +1,13 @@
 "use client";
 import { useState } from "react";
 import { useFormspark } from "@formspark/use-formspark";
-import Navbar from "../components/Navbar";
-import AlertBox from "../components/alertbox";
 import { useGlobalState } from "../libs/global_state";
-import { redirect } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Details = () => {
+  const searchParams = useSearchParams();
+  const broker = searchParams.get("broker");
+
   const [submit, submitting] = useFormspark({
     formId: "opxueG6Xb",
   });
@@ -17,28 +18,6 @@ const Details = () => {
   const [amount, setAmount] = useState("");
   const {} = useGlobalState();
 
-  // @ts-ignore
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // Perform manual validation
-    if (
-      businessname.trim() === "" ||
-      owner.trim() === "" ||
-      phone.trim() === "" ||
-      email.trim() === "" ||
-      amount.trim() === ""
-    ) {
-      alert("Please fill in all required fields");
-
-      return;
-    }
-
-    // Continue with form submission logic
-    console.log("Form submitted!");
-    redirect("https://getfunds.co.za/");
-  };
-
   return (
     <div className="max-w-md mx-auto mt-5 p-6 bg-opacity-30 rounded-md shadow-md text-slate-900">
       <h2 className="text-2xl font-semibold mb-4">Business Details</h2>
@@ -46,7 +25,7 @@ const Details = () => {
         onSubmit={async (e) => {
           e.preventDefault();
 
-          await submit({ businessname, owner, phone, email, amount });
+          await submit({ businessname, owner, phone, email, amount, broker });
           alert(
             "Your email has been submitted successfully \n \n A funding specialist will be in touch with you shortly"
           );
