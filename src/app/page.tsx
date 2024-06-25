@@ -18,7 +18,7 @@ const Congrats = () => {
 
   const userProfileLink = `/application/?${broker}`;
   const userLink = broker ? `/user/${broker}` : '/user';
-  const url = broker ? `https://apply.getfunds.co.za?broker=${broker}` : `https://apply.getfunds.co.za?broker=${broker}`;
+  const url = broker ? `https://apply.getfunds.co.za?broker=${broker}` : `https://apply.getfunds.co.za?broker=${"housedeal"}`;
 
   // @ts-ignore
   const handleKeyDown = (event) => {
