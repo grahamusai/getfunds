@@ -117,7 +117,7 @@ const Congrats = () => {
       {isModalOpen && <Modal />}
       {termsModalIsOpen && <TermsModal />}
       <div className="flex justify-center items-center text-slate-900">
-        <div className="mt-20 mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-[30rem] text-slate-900">
+        <div className="mt-20 mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-[10rem] 2xl:mx-[30rem] text-slate-900">
           <div className="flex justify-center">
             <Image
               src="/images/logo.png"
