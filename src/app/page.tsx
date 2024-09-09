@@ -117,7 +117,7 @@ const Congrats = () => {
       {isModalOpen && <Modal />}
       {termsModalIsOpen && <TermsModal />}
       <div className="flex justify-center items-center text-slate-900">
-        <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-48 text-slate-900">
+        <div className="mt-20 mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-[30rem] text-slate-900">
           <div className="flex justify-center">
             <Image
               src="/images/logo.png"
@@ -180,7 +180,8 @@ const Congrats = () => {
                       onTouchStart={handleFocus}
                       onChange={(e) => {
                         setNeededAmount(parseInt(e.target.value) / 10);
-                      }}
+                      }} 
+                      
                       className="bg-green-500 z-0"
                     />
                     <p className="text-center text-green-600 font-bold text-lg">
