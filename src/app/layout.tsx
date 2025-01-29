@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Get Funds",
-  description: "Quick, Easy & Affordable",
+  description: "Quick, Easy & Accessible",
   
 };
 
